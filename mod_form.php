@@ -15,7 +15,7 @@ require_once($CFG->dirroot.'/course/moodleform_mod.php');
  * Formulaire de paramètre d'instance du module
  *
  * @package     mod_dicomviewer
- * @copyright   2021 BEDIA Julien | Stage DUT AS Informatique
+ * @copyright   2021 | Stage DUT AS Informatique
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class mod_dicomviewer_mod_form extends moodleform_mod {
@@ -40,11 +40,18 @@ class mod_dicomviewer_mod_form extends moodleform_mod {
             $mform->setType('name', PARAM_CLEANHTML);
         }
 
+        //Bouton du nom
         $mform->addRule('name', null, 'required', null, 'client');
         $mform->addRule('name', get_string('maximumchars', '', 255), 'maxlength', 255, 'client');
         $mform->addHelpButton('name', 'dicomviewername', 'mod_dicomviewer');
 
-        // Ajotu de intro et introformat
+        //Bouton de l'instance UID
+        $mform->addElement('text', 'studyinstance', 'Study Instance UID', array('size'=>'64'));
+        $mform->addRule('studyinstance', null, 'required', null, 'client');
+        $mform->addRule('studyinstance', get_string('maximumchars', '', 255), 'maxlength', 255, 'client');
+        $mform->addHelpButton('studyinstance', 'dicomviewername', 'mod_dicomviewer');
+
+        // Ajout de intro et introformat
         if ($CFG->branch >= 29) {
             $this->standard_intro_elements();
         } else {

@@ -1,7 +1,6 @@
 <?php
-
 /**
- * Affichage de la vue principale du plugin
+ * Affichage de la vue d'un viewer choisi
  *
  * @package     mod_dicomviewer
  * @copyright   2021 | Stage DUT AS Informatique
@@ -31,7 +30,7 @@ require_login($course, true, $cm);
 
 $modulecontext = context_module::instance($cm->id);
 
-$PAGE->set_url('/mod/dicomviewer/view.php', array('id' => $cm->id));
+$PAGE->set_url('/mod/dicomviewer/viewerWeb.php', array('id' => $cm->id));
 $PAGE->set_title(format_string($moduleinstance->name));
 $PAGE->set_heading(format_string($course->fullname));
 $PAGE->set_context($modulecontext);
@@ -39,12 +38,21 @@ $PAGE->set_context($modulecontext);
 
 echo $OUTPUT->header();
 
-$templateContexte = (object)[
-    'description'=>strip_tags($moduleinstance->intro),
-    'urlViewer'=> new moodle_url('/mod/dicomviewer/viewerWeb.php?id='.$cm->id),
-    'studyinstance' => $moduleinstance->studyinstance
-];
-echo $OUTPUT->render_from_template('mod_dicomviewer/view', $templateContexte);
+if($_GET['viewer'] == "OHIF"){
+	$urlViewer = get_string('ohif', 'mod_dicomviewer', $moduleinstance->studyinstance);
+	$name = "OHIF Web Viewer";
+}else if($_GET['viewer'] == "Stone"){
+	$urlViewer = get_string('stoneviewer', 'mod_dicomviewer', $moduleinstance->studyinstance);
+	$name = "Stone Web Viewer";
+}else{
+	redirect($CFG->wwwwroot . '/moodle/mod/dicomviewer/view.php?id='.$_GET['id']);
+}
 
+$templateContexte = (object)[
+	'urlViewer'=> $urlViewer,
+	'name' => $name
+];
+
+echo $OUTPUT->render_from_template('mod_dicomviewer/viewerWeb', $templateContexte);
 
 echo $OUTPUT->footer();

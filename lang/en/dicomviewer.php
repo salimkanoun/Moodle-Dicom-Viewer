@@ -14,6 +14,6 @@ $string['pluginname'] = 'Viewer DICOM image';
 $string['modulename'] = 'Viewer DICOM image';
 $string['dicomviewername'] = 'Name of activity';
 $string['dicomviewerfieldset'] = 'Ensemble des champs';
-$string['osimisviewer'] = 'http://localhost:8042/osimis-viewer/app/index.html?study={$a}';
-
+$string['ohif'] = 'http://localhost:8042/osimis-viewer/app/index.html?study={$a}';
+$string['stoneviewer'] = 'http://localhost:8042/stone-webviewer/index.html?study={$a}';
 //String des viewer

@@ -39,6 +39,7 @@ function dicomviewer_add_instance($moduleinstance, $mform = null) {
 
     $id = $DB->insert_record('dicomviewer', $moduleinstance);
 
+
     return $id;
 }
 
@@ -71,9 +72,7 @@ function dicomviewer_delete_instance($id) {
     if (!$exists) {
         return false;
     }
-
     $DB->delete_records('dicomviewer', array('id' => $id));
-
     return true;
 }
 

@@ -19,4 +19,27 @@
 	@copyright   2021 | Stage DUT AS Informatique
 }}
 <h2>Viewer DICOM Image</h2>
-<iframe id="StoneViewerExemple" title="StoneViewerExemple" style="width: 100%; height: 800px;" src="{{urlStone}}"></iframe>
+<div class="row mt-5">
+    <div class="col-12 col-md-6 text-left">
+        <div class="card border-primary">
+            <div class="card-header">
+                Description
+            </div>
+            <div class="card-body">
+             {{description}}
+            </div>
+        </div>
+       
+    </div>
+    <div class="col-12 col-md-6 text-center">
+        <div class="card border-primary">
+            <div class="card-header">
+                Choose your viewer
+            </div>
+            <div class="card-body">
+                <input class="btn mr-5 mt-3 btn-outline-primary" type="button" value="OHIF Web Viewer" onclick="location.href='{{urlViewer}}&viewer=OHIF'">
+                <input class="btn ml-5 mt-3 btn-outline-primary" type="button" value="Stone Web Viewer" onclick="location.href='{{urlViewer}}&viewer=Stone'">
+            </div>
+        </div>
+    </div>
+</div>
