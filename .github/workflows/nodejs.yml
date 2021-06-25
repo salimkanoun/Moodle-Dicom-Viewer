@@ -27,13 +27,13 @@ jobs:
         cd Viewers
         yarn install
         QUICK_BUILD=true PUBLIC_URL=/moodle/mod/dicomviewer/viewer-ohif/ yarn run build
-      working-directory: Temporary
+      working-directory: /tmp
     - name: copy Temporary OHIF build to Distribution
       run : mv build ../viewer-ohif
-      working-directory: Temporary
+      working-directory: /tmp
     - name: Replace configuration and app-config file
       run : mv ../config-ohif ../viewer-ohif
-      working-directory: Temporary
+      working-directory: /tmp
     - name: copy Stone Of Orthanc
       run: |
         mkdir stone
@@ -41,10 +41,10 @@ jobs:
         wget https://lsb.orthanc-server.com/stone-webviewer/2.0/wasm-binaries.zip
         unzip wasm-binaries.zip -d .
         rm wasm-binaries.zip
-      working-directory: Temporary
+      working-directory: /tmp
     - name: copy Temporary stone of Orthanc Build to Distribution
       run : mv stone ../viewer-stone
-      working-directory: Temporary
+      working-directory: /tmp
     - name: create ZIP distribution
       run : zip -r moodle-dicom-viewer.zip .
       working-directory: Distribution
