@@ -40,7 +40,8 @@ $PAGE->set_context($modulecontext);
 echo $OUTPUT->header();
 
 $templateContexte = (object)[
-    'description'=>strip_tags($moduleinstance->intro),
+    'choiceviewer'=>get_string('choiceviewer', 'mod_dicomviewer'),
+    'description'=>$moduleinstance->intro,
     'urlViewer'=> new moodle_url('/mod/dicomviewer/viewerWeb.php?id='.$cm->id),
     'studyinstance' => $moduleinstance->studyinstance
 ];

@@ -50,7 +50,7 @@ class mod_dicomviewer_mod_form extends moodleform_mod {
         $mform->addRule('studyinstance', null, 'required', null, 'client');
         $mform->addRule('studyinstance', get_string('maximumchars', '', 255), 'maxlength', 255, 'client');
         $mform->addHelpButton('studyinstance', 'dicomviewername', 'mod_dicomviewer');
-
+        
         // Ajout de intro et introformat
         if ($CFG->branch >= 29) {
             $this->standard_intro_elements();
@@ -59,8 +59,6 @@ class mod_dicomviewer_mod_form extends moodleform_mod {
         }
 
         // Ajout du reste des paramètres
-        $mform->addElement('static', 'label1', 'dicomviewersettings', get_string('dicomviewersettings', 'mod_dicomviewer'));
-        $mform->addElement('header', 'dicomviewerfieldset', get_string('dicomviewerfieldset', 'mod_dicomviewer'));
 
         // Ajout des éléments standards
         $this->standard_coursemodule_elements();
