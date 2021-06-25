@@ -58,5 +58,5 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
         name: moodle-dicom-viewer
-        path: ./Distribution/moodle-dicom-viewer.zip
+        path: moodle-dicom-viewer.zip
 
