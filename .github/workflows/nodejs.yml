@@ -1,0 +1,66 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: build OHIF
+      run: |
+        mkdir ohif
+        cd ohif
+        git clone https://github.com/OHIF/Viewers.git
+        cd Viewers
+        yarn install
+        QUICK_BUILD=true PUBLIC_URL=/moodle/mod/dicomviewer/viewer-ohif/ yarn run build
+      working-directory: Temporary
+    - name: copy Temporary OHIF build to Distribution
+      run : mv build ../viewer-ohif
+      working-directory: Temporary
+    - name: Replace configuration and app-config file
+      run : mv ../config-ohif ../viewer-ohif
+      working-directory: Temporary
+    - name: copy Stone Of Orthanc
+      run: |
+        mkdir stone
+        cd stone
+        wget https://lsb.orthanc-server.com/stone-webviewer/2.0/wasm-binaries.zip
+        unzip wasm-binaries.zip -d .
+        rm wasm-binaries.zip
+      working-directory: Temporary
+    - name: copy Temporary stone of Orthanc Build to Distribution
+      run : mv stone ../viewer-stone
+      working-directory: Temporary
+    - name: create ZIP distribution
+      run : zip -r moodle-dicom-viewer.zip .
+      working-directory: Distribution
+    - name: Upload Release Asset
+      if: github.event.pull_request.merged == true
+      id: upload-release-asset 
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+        asset_path: ./Distribution/moodle-dicom-viewer.zip
+        asset_name: moodle-dicom-viewer.zip
+        asset_content_type: application/zip
+    - uses: actions/upload-artifact@v1
+      with:
+        name: moodle-dicom-viewer
+        path: ./Distribution/moodle-dicom-viewer.zip
+
