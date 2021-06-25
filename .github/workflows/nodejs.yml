@@ -39,12 +39,7 @@ jobs:
         QUICK_BUILD=true PUBLIC_URL=/moodle/mod/dicomviewer/viewer-ohif/ yarn run build
       working-directory: /tmp
     - name: copy Temporary OHIF build to Distribution
-      run : |
-        cd /tmp/ohif
-        ls
-        cd /tmp/ohif/Viewers
-        ls
-        mv /tmp/ohif/Viewers/build ./viewer-ohif
+      run : mv /tmp/ohif/Viewers/platform/viewer/dist/ ./viewer-ohif
     - name: Replace configuration and app-config file
       run : mv ./config-ohif ./viewer-ohif
     - name: create ZIP distribution
