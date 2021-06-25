@@ -15,6 +15,9 @@ $string['modulename'] = 'Viewer DICOM image';
 $string['modulename_help'] = 'need a description';
 $string['dicomviewername'] = 'Name of activity';
 $string['dicomviewerfieldset'] = 'Set of fields';
+$string['dicomviewer:view'] = '';
+$string['dicomviewer:addinstance'] = '';
+
 
 //String des viewer
 $string['ohif'] = new moodle_url('/mod/dicomviewer/viewer-ohif/').'{$a}';

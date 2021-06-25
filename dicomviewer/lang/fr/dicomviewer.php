@@ -15,6 +15,8 @@ $string['modulename'] = 'Viewer DICOM image';
 $string['modulename_help'] = 'need a description';
 $string['dicomviewername'] = 'Nom de l\'activité';
 $string['dicomviewerfieldset'] = 'Ensemble des champs';
+$string['dicomviewer:view'] = 'Visionner une instance du plugin dicomviewer dans un cours';
+$string['dicomviewer:addinstance'] = 'Créer une instance de dicom viewer dans un cours';
 
 //String des viewer
 $string['ohif'] = new moodle_url('/mod/dicomviewer/viewer-ohif/').'{$a}';
