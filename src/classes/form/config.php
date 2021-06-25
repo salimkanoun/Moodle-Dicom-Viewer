@@ -17,8 +17,8 @@ class form_config extends moodleform{
 		global $CFG;
  		
 		//Recuperation des champs de configuration
-		$dataJson = json_decode(file_get_contents('configuration_viewer.json'), true);
-
+		$dataJsonStone = json_decode(file_get_contents('viewer-stone/configuration.json'), true);
+        $dataJsonOhif = json_decode(file_get_contents('viewer-ohif/configuration.json'), true);
 
         $mform = $this->_form; // Instancie un formulaire
 
@@ -27,14 +27,14 @@ class form_config extends moodleform{
 
         $mform->addElement('header', 'headerstone', get_string('titlestone', 'dicomviewer'));
 
-        addElementClassicOnForm($mform, 'title_expected', 'stone_expectedorigin', $dataJson['ExpectedMessageOrigin'], $attributs);
-        addElementClassicOnForm($mform, 'title_dicomweb', 'stone_dicomwebroot', $dataJson['DicomWebRoot'], $attributs);
+        addElementClassicOnForm($mform, 'title_expected', 'stone_expectedorigin', $dataJsonStone['StoneWebViewer']['ExpectedMessageOrigin'], $attributs);
+        addElementClassicOnForm($mform, 'title_dicomweb', 'stone_dicomwebroot', $dataJsonStone['StoneWebViewer']['DicomWebRoot'], $attributs);
 
         $mform->addElement('header', 'headerohif', get_string('titleohif', 'dicomviewer'));
 
-        addElementClassicOnForm($mform, 'title_wadoUriRoot', 'ohif_wadoUriRoot', $dataJson['wadoUriRoot'], $attributs);
-        addElementClassicOnForm($mform, 'title_qidoRoot', 'ohif_qidoRoot', $dataJson['qidoRoot'], $attributs);
-        addElementClassicOnForm($mform, 'title_wadoRoot', 'ohif_wadoRoot', $dataJson['wadoRoot'], $attributs);
+        addElementClassicOnForm($mform, 'title_wadoUriRoot', 'ohif_wadoUriRoot', $dataJsonOhif['servers']['dicomWeb'][0]['wadoUriRoot'], $attributs);
+        addElementClassicOnForm($mform, 'title_qidoRoot', 'ohif_qidoRoot', $dataJsonOhif['servers']['dicomWeb'][0]['qidoRoot'], $attributs);
+        addElementClassicOnForm($mform, 'title_wadoRoot', 'ohif_wadoRoot', $dataJsonOhif['servers']['dicomWeb'][0]['wadoRoot'], $attributs);
        
 
         $this->add_action_buttons();
@@ -51,34 +51,18 @@ class form_config extends moodleform{
         }
 
         if(!$arrayEmpty){
-            //Remplacement dans le fichier app-config.js de ohif
-            $dataConfigJsonDefault = json_decode(file_get_contents('configuration_viewer.json'), true);
-            $dataJsonOhif = file_get_contents('viewer-ohif/app-config.js');
-            $oldElementOhif = array(
-                'wadoUriRoot: "'.$dataConfigJsonDefault['wadoUriRoot'], 
-                'qidoRoot: "'.$dataConfigJsonDefault['qidoRoot'], 
-                'wadoRoot: "'.$dataConfigJsonDefault['wadoRoot']
-            );
-            $newElementOhif = array(
-                'wadoUriRoot: "'.$data['ohif_wadoUriRoot'], 
-                'qidoRoot: "'.$data['ohif_qidoRoot'], 
-                'wadoRoot: "'.$data['ohif_wadoRoot']
-            );
-            $dataJsonOhif = str_replace($oldElementOhif, $newElementOhif, $dataJsonOhif);
-            file_put_contents('viewer-ohif/app-config.js', $dataJsonOhif);
-
             //Remplacement dans le fichier de configuration des viewer
-            $jsonData = array(
-                "ExpectedMessageOrigin"=>$data['stone_expectedorigin'],
-                "DicomWebRoot"=>$data['stone_dicomwebroot'],
-                "wadoUriRoot"=>$data['ohif_wadoUriRoot'],
-                "qidoRoot"=>$data['ohif_qidoRoot'],
-                "wadoRoot"=>$data['ohif_wadoRoot']
-            );
-            file_put_contents("configuration_viewer.json", json_encode($jsonData)); 
+
+            //Modifier le fichier configuration.json du viewder-ohif
+            $dataJsonOhif = json_decode(file_get_contents('viewer-ohif/configuration.json'), true);
+            $dataJsonOhif['servers']['dicomWeb'][0]['wadoUriRoot'] = $data['ohif_wadoUriRoot'];
+            $dataJsonOhif['servers']['dicomWeb'][0]['qidoRoot'] = $data['ohif_qidoRoot'];
+            $dataJsonOhif['servers']['dicomWeb'][0]['wadoRoot'] = $data['ohif_wadoRoot'];
+
+            file_put_contents("viewer-ohif/configuration.json", json_encode($dataJsonOhif)); 
 
             //Ecriture du fichier configuration.json de stone
-            $dataJsonStone = json_decode(file_get_contents('viewer-stone/configuration.json'), true);
+            $dataJsonStone = json_decode(file_get_contents('config-stone/configuration.json'), true);
             $dataJsonStone['StoneWebViewer']['ExpectedMessageOrigin'] = $data['stone_expectedorigin'];
             $dataJsonStone['StoneWebViewer']['DicomWebRoot'] = $data['stone_dicomwebroot'];
             file_put_contents("viewer-stone/configuration.json", json_encode($dataJsonStone)); 
