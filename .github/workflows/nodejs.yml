@@ -39,15 +39,11 @@ jobs:
         QUICK_BUILD=true PUBLIC_URL=/moodle/mod/dicomviewer/viewer-ohif/ yarn run build
       working-directory: /tmp
     - name: copy Temporary OHIF build to Distribution
-      run : mv /tmp/build ../viewer-ohif
+      run : mv /tmp/build ./viewer-ohif
     - name: Replace configuration and app-config file
-      run : mv /tmp/config-ohif ../viewer-ohif
-
-   
-      working-directory: /tmp
+      run : mv ./config-ohif ./viewer-ohif
     - name: create ZIP distribution
       run : zip -r moodle-dicom-viewer.zip .
-      working-directory: Distribution
     - name: Upload Release Asset
       if: github.event.pull_request.merged == true
       id: upload-release-asset 
