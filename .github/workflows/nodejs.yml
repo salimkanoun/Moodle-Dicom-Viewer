@@ -19,7 +19,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: copy Stone Of Orthanc
+    - name: Doowload Stone Of Orthanc Distribution
       run: |
         mkdir stone
         cd stone
@@ -28,8 +28,8 @@ jobs:
         rm wasm-binaries.zip
       working-directory: /tmp
     - name: copy Temporary stone of Orthanc Build to Distribution
-      run : mv /tmp/stone ./viewer-stone
-    - name: build OHIF
+      run : mv /tmp/stone ./src/viewer-stone
+    - name: build OHIF Distribution
       run: |
         mkdir ohif
         cd ohif
@@ -39,11 +39,11 @@ jobs:
         QUICK_BUILD=true PUBLIC_URL=/moodle/mod/dicomviewer/viewer-ohif/ yarn run build
       working-directory: /tmp
     - name: copy Temporary OHIF build to Distribution
-      run : mv /tmp/ohif/Viewers/platform/viewer/dist/ ./viewer-ohif
+      run : mv /tmp/ohif/Viewers/platform/viewer/dist/ ./src/viewer-ohif
     - name: Replace configuration and app-config file
-      run : mv ./config-ohif ./viewer-ohif
+      run : mv ./src/config-ohif ./src/viewer-ohif
     - name: create ZIP distribution
-      run : zip -r moodle-dicom-viewer.zip .
+      run : zip -r moodle-dicom-viewer.zip ./src
     - name: Upload Release Asset
       if: github.event.pull_request.merged == true
       id: upload-release-asset 
