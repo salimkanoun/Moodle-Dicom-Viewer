@@ -45,5 +45,5 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
         name: moodle-dicom-viewer
-        path: ./src/*
+        path: ./src/
 
