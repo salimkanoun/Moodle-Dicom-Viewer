@@ -28,7 +28,7 @@ jobs:
         rm wasm-binaries.zip
       working-directory: /tmp
     - name: copy Temporary stone of Orthanc Build to Distribution
-      run : mv /tmp/stone/wasm-binaries/StoneWebViewer/* ./src/viewer-stone
+      run : mv /tmp/stone/wasm-binaries/StoneWebViewer/* ./src/dicomviewer/viewer-stone
     - name: build OHIF Distribution
       run: |
         mkdir ohif
@@ -39,11 +39,11 @@ jobs:
         QUICK_BUILD=true PUBLIC_URL=/moodle/mod/dicomviewer/viewer-ohif/ yarn run build
       working-directory: /tmp
     - name: copy Temporary OHIF build to Distribution
-      run : mv /tmp/ohif/Viewers/platform/viewer/dist/* ./src/viewer-ohif
+      run : mv /tmp/ohif/Viewers/platform/viewer/dist/* ./src/dicomviewer/viewer-ohif
     - name: OHIF Replace configuration and app-config file
-      run : mv ./src/config-ohif/* ./src/viewer-ohif
+      run : mv ./src/dicomviewer/config-ohif/* ./src/dicomviewer/viewer-ohif
     - name: STONE Replace configuration file
-      run : mv ./src/config-stone/* ./src/viewer-stone
+      run : mv ./src/dicomviewer/config-stone/* ./src/dicomviewer/viewer-stone
     - uses: actions/upload-artifact@v1
       with:
         name: dicomviewer
