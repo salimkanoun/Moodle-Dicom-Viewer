@@ -44,6 +44,6 @@ jobs:
       run : mv ./src/config-ohif/* ./src/viewer-ohif
     - uses: actions/upload-artifact@v1
       with:
-        name: moodle-dicom-viewer
+        name: dicomviewer
         path: ./src/
 
