@@ -62,7 +62,7 @@ class form_config extends moodleform{
             file_put_contents("viewer-ohif/configuration.json", json_encode($dataJsonOhif)); 
 
             //Ecriture du fichier configuration.json de stone
-            $dataJsonStone = json_decode(file_get_contents('config-stone/configuration.json'), true);
+            $dataJsonStone = json_decode(file_get_contents('viewer-stone/configuration.json'), true);
             $dataJsonStone['StoneWebViewer']['ExpectedMessageOrigin'] = $data['stone_expectedorigin'];
             $dataJsonStone['StoneWebViewer']['DicomWebRoot'] = $data['stone_dicomwebroot'];
             file_put_contents("viewer-stone/configuration.json", json_encode($dataJsonStone)); 

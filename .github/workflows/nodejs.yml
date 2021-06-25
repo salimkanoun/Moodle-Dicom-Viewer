@@ -40,8 +40,10 @@ jobs:
       working-directory: /tmp
     - name: copy Temporary OHIF build to Distribution
       run : mv /tmp/ohif/Viewers/platform/viewer/dist/* ./src/viewer-ohif
-    - name: Replace configuration and app-config file
+    - name: OHIF Replace configuration and app-config file
       run : mv ./src/config-ohif/* ./src/viewer-ohif
+    - name: STONE Replace configuration file
+      run : mv ./src/config-stone/* ./src/viewer-stone
     - uses: actions/upload-artifact@v1
       with:
         name: dicomviewer
