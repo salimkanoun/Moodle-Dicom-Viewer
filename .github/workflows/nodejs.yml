@@ -48,6 +48,7 @@ jobs:
       run : |
         rm -rf ./.git
         rm -rf ./.github
+        rm ./.gitignore
     - uses: actions/upload-artifact@v1
       with:
         name: dicomviewer
