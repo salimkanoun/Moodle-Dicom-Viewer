@@ -52,6 +52,7 @@ services:
         image: osimis/orthanc:21.1.7
         container_name: orthanc
         restart: unless-stopped
+        ports: ["8042:8042"]
         volumes: 
           - orthanc:/var/lib/orthanc/db:Z
         networks:
@@ -73,27 +74,6 @@ services:
           - "traefik.http.routers.blog.rule=Host(`localhost`);PathPrefix:/dicom-web/"
           - "traefik.http.routers.blog.entrypoints=web"
           - "traefik.docker.network=web"
-
-    orthanctoolsjs:
-        image: salimkanoun/orthanctoolsjs:0.6.7
-        container_name: orthanctoolsjs
-        restart: unless-stopped
-        volumes: 
-          - orthanctoolsjs:/OrthancToolsJs/data:Z
-        ports: ["8081:4000"]
-        networks:
-          - web
-        environment:
-            TZ: "Europe/Paris"
-            ORTHANC_ADDRESS: "http://orthanc"
-            ORTHANC_PORT: "8042"
-            ORTHANC_USERNAME: "Orthanc"
-            ORTHANC_PASSWORD: "Orthanc"
-            DOMAIN_PROTOCOL: "https"
-            DOMAIN_ADDRESS: "localhost"
-            REDIS_HOST: "redis"
-            REDIS_PORT: "6379"
-            REDIS_PASSWORD: ""
 
 volumes:
     moodle_data:
