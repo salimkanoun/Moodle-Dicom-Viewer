@@ -101,3 +101,4 @@ volumes:
     orthanc:
     orthancpacs:
     orthanctoolsjs:
+    mariadb_data:
