@@ -75,23 +75,3 @@ function dicomviewer_delete_instance($id) {
     $DB->delete_records('dicomviewer', array('id' => $id));
     return true;
 }
-
-/**
- * Etend la navigation globale en ajoutant un noeud
- *
- * @param navigation_node $dicomviewernode Un objet représentant le noeud de navigation.
- * @param stdClass $course
- * @param stdClass $module
- * @param cm_info $cm
- */
-function dicomviewer_extend_navigation($dicomviewernode, $course, $module, $cm) {
-}
-
-/**
- * Étend la navigation dans les paramètres avec les paramètres 
- *
- * @param settings_navigation $settingsnav {@see settings_navigation}
- * @param navigation_node $dicomviewernode {@see navigation_node}
- */
-function dicomviewer_extend_settings_navigation($settingsnav, $dicomviewernode = null) {
-}
