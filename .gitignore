@@ -2,3 +2,4 @@ dicomviewer/viewer-ohif/*
 dicomviewer/viewer-stone/*
 !dicomviewer/viewer-ohif/README
 !dicomviewer/viewer-stone/README
+!dicomviewer/viewer-ohif/.htaccess
