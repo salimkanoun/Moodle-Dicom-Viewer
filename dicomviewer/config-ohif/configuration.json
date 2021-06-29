@@ -1,5 +1,5 @@
 {
-		"routerBasename": "/",
+		"routerBasename": "/mod/dicomviewer/viewer-ohif/",
 		"extensions": [],
 		"showStudyList": true,
 		"filterQueryParam": false,
