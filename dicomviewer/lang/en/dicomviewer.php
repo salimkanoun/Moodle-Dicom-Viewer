@@ -20,7 +20,7 @@ $string['dicomviewer:addinstance'] = '';
 
 
 //String des viewer
-$string['ohif'] = new moodle_url('/mod/dicomviewer/viewer-ohif/').'{$a}';
+$string['ohif'] = new moodle_url('/mod/dicomviewer/viewer-ohif/index.html');
 $string['stoneviewer'] = new moodle_url('/mod/dicomviewer/viewer-stone/index.html').'?study={$a}';
 
 //String du mustache view.php

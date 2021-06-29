@@ -19,7 +19,7 @@ $string['dicomviewer:view'] = 'Visionner une instance du plugin dicomviewer dans
 $string['dicomviewer:addinstance'] = 'Créer une instance de dicom viewer dans un cours';
 
 //String des viewer
-$string['ohif'] = new moodle_url('/mod/dicomviewer/viewer-ohif/').'{$a}';
+$string['ohif'] = new moodle_url('/mod/dicomviewer/viewer-ohif/index.html');
 $string['stoneviewer'] = new moodle_url('/mod/dicomviewer/viewer-stone/index.html').'?study={$a}';
 
 //String du mustache view.php

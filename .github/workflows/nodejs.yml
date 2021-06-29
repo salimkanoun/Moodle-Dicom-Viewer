@@ -36,7 +36,7 @@ jobs:
         git clone https://github.com/OHIF/Viewers.git
         cd Viewers
         yarn install
-        QUICK_BUILD=true PUBLIC_URL=/moodle/mod/dicomviewer/viewer-ohif/ yarn run build
+        QUICK_BUILD=true PUBLIC_URL=/mod/dicomviewer/viewer-ohif/ yarn run build
       working-directory: /tmp
     - name: copy Temporary OHIF build to Distribution
       run : mv /tmp/ohif/Viewers/platform/viewer/dist/* ./dicomviewer/viewer-ohif
