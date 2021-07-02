@@ -12,7 +12,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'Viewer DICOM Image';
 $string['modulename'] = 'Viewer DICOM Image';
-$string['modulename_help'] = 'The Dicom Viewer activity allows a teacher to create a resource in order to view a DICOM image. The activity will then consist of a description as well as the different viewers.
+$string['modulename_help'] = 'The Dicom Viewer activity allows a teacher to create a resource in order to view a DICOM study. The activity will then be composed of the different viewers of DICOM study.
 
 Viewer Dicom has two viewers:
 

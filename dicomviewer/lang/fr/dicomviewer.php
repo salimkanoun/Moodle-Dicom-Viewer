@@ -12,7 +12,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'Viewer DICOM Image';
 $string['modulename'] = 'Viewer DICOM Image';
-$string['modulename_help'] = 'L\'activité Dicom Viewer permet à un enseignant de créer une ressource dans le but de visualiser une image DICOM. L\'activité sera alors composé d\'une description ainsi que des différents visualisateurs.
+$string['modulename_help'] = 'L\'activité Dicom Viewer permet à un enseignant de créer une ressource dans le but de visualiser une study DICOM. L\'activité sera alors composé des différents visualisateurs de study DICOM.
 
 Actuellement Viewer Dicom possèdent deux visualisateurs:
 
