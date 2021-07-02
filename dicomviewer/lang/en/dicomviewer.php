@@ -10,9 +10,18 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'Viewer DICOM image';
-$string['modulename'] = 'Viewer DICOM image';
-$string['modulename_help'] = 'need a description';
+$string['pluginname'] = 'Viewer DICOM Image';
+$string['modulename'] = 'Viewer DICOM Image';
+$string['modulename_help'] = 'The Dicom Viewer activity allows a teacher to create a resource in order to view a DICOM image. The activity will then consist of a description as well as the different viewers.
+
+Viewer Dicom has two viewers:
+
+* Stone Web Viewer - Orthanc
+* Open Health Imaging Foundation
+
+For more information on configuring viewers see the documentation and your moodle administrator.';
+$string['modulename_link'] = '';
+$string['modulenameplural'] = 'Viewer DICOM Image';
 $string['dicomviewername'] = 'Name of activity';
 $string['dicomviewerfieldset'] = 'Set of fields';
 $string['dicomviewer:view'] = 'Viewing an instance of the dicomviewer plugin in a course';
@@ -42,11 +51,11 @@ $string['titledesc'] = 'Configuration parameters of DICOM Viewer';
 
     //Ohif
     $string['title_wadoUriRoot'] = 'Wado Uri Root';
-    $string['title_wadoUriRoot_help'] = ' .. ';
+    $string['title_wadoUriRoot_help'] = 'Address for WadoUriRoot';
     $string['title_qidoRoot'] = 'Qido Root';
-    $string['title_qidoRoot_help'] = ' .. ';
+    $string['title_qidoRoot_help'] = 'Address for QidoRoot';
     $string['title_wadoRoot'] = 'Wado Root';
-    $string['title_wadoRoot_help'] = ' .. ';
+    $string['title_wadoRoot_help'] = 'Address for WadoRoot';
 $string['invalid_param'] = 'Invalid parameter or empty field';
 
 
