@@ -53,7 +53,8 @@ echo $OUTPUT->heading($modulenameplural);
 $dicomviewers = get_all_instances_in_course('dicomviewer', $course);
 
 if (empty($dicomviewers)) {
-    notice(get_string('no$dicomviewerinstances', 'mod_dicomviewer'), new moodle_url('/course/view.php', array('id' => $course->id)));
+    notice(get_string('no$dicomviewerinstances', 'mod_dicomviewer'),
+                    new moodle_url('/course/view.php', array('id' => $course->id)));
 }
 
 $table = new html_table();

@@ -27,10 +27,10 @@ require(__DIR__.'/../../config.php');
 require_once(__DIR__.'/lib.php');
 
 
-//Id du module de cours.
+// Id du module de cours.
 $id = optional_param('id', 0, PARAM_INT);
 
-//Id de l'activité.
+// Id de l'activité.
 $d = optional_param('d', 0, PARAM_INT);
 
 if ($id) {
@@ -55,13 +55,13 @@ $PAGE->set_context($modulecontext);
 
 echo $OUTPUT->header();
 
-$templateContexte = (object)[
+$templatecontexte = (object)[
     'choiceviewer' => get_string('choiceviewer', 'mod_dicomviewer'),
     'description' => $moduleinstance->intro,
     'urlViewerOhif' => new moodle_url('/mod/dicomviewer/viewerOhif.php', array('id'=>$cm->id)),
     'urlViewerStone' => new moodle_url('/mod/dicomviewer/viewerStone.php', array('id'=>$cm->id)),
     'studyinstance' => $moduleinstance->studyinstance
 ];
-echo $OUTPUT->render_from_template('mod_dicomviewer/view', $templateContexte);
+echo $OUTPUT->render_from_template('mod_dicomviewer/view', $templatecontexte);
 
 echo $OUTPUT->footer();

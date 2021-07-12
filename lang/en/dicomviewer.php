@@ -43,20 +43,20 @@ $string['dicomviewer:view'] = 'Viewing an instance of the dicomviewer plugin in 
 $string['dicomviewer:addinstance'] = 'Create a dicom viewer instance in a course';
 
 
-//String des viewer.
+// String des viewer.
 $string['ohif'] = './viewer-ohif/viewer/{$a}';
 $string['stoneviewer'] = './viewer-stone/index.html?study={$a}';
 
-//String du mustache view.php.
+// String du mustache view.php.
 $string['choiceviewer'] = 'Choose the viewer';
 
-//String settings.php.
+// String settings.php.
 $string['cancelForm'] = 'You canceled the Dicom Viewer activity plugin configuration form';
 $string['validateForm'] = 'Configuration saved successfully';
 $string['titlestone'] = 'Stone Web Viewer';
 $string['titleohif'] = 'OHIF Viewer';
 $string['titledesc'] = 'Configuration parameters of DICOM Viewer';
-    //Stone.
+    // Stone.
     $string['title_expected'] = 'Expected origin message';
     $string['title_expected_help'] = 'The allowed origin for messages corresponding to dynamic actions
          * triggered by another Web page using "window.postMessage()"';
@@ -64,7 +64,7 @@ $string['titledesc'] = 'Configuration parameters of DICOM Viewer';
     $string['title_dicomweb'] = 'Dicom web root';
     $string['title_dicomweb_help'] = 'Root path of the DICOMweb server.';
 
-    //Ohif.
+    // Ohif.
     $string['title_wadoUriRoot'] = 'Wado Uri Root';
     $string['title_wadoUriRoot_help'] = 'Address for WadoUriRoot';
     $string['title_qidoRoot'] = 'Qido Root';

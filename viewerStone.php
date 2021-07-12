@@ -26,10 +26,10 @@
 require(__DIR__.'/../../config.php');
 require_once(__DIR__.'/lib.php');
 
-//Id du module de cours.
+// Id du module de cours.
 $id = optional_param('id', 0, PARAM_INT);
 
-//Id de l'activité.
+// Id de l'activité.
 $d = optional_param('d', 0, PARAM_INT);
 
 if ($id) {
@@ -56,11 +56,11 @@ echo $OUTPUT->header();
 $urlviewer = get_string('stoneviewer', 'mod_dicomviewer', $moduleinstance->studyinstance);
 $name = "Stone Web Viewer";
 
-$templateContexte = (object)[
+$templatecontexte = (object)[
 	'urlViewer' => $urlviewer,
 	'name' => $name
 ];
 
-echo $OUTPUT->render_from_template('mod_dicomviewer/viewerWeb', $templateContexte);
+echo $OUTPUT->render_from_template('mod_dicomviewer/viewerWeb', $templatecontexte);
 
 echo $OUTPUT->footer();

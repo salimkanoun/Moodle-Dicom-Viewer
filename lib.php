@@ -82,10 +82,6 @@ function dicomviewer_update_instance($moduleinstance, $mform = null) {
 function dicomviewer_delete_instance($id) {
     global $DB;
 
-    /*$exists = $DB->get_record('dicomviewer', array('id' => $id));
-    if (!$exists) {
-        return false;
-    }*/
     $DB->delete_records('dicomviewer', array('id' => $id));
     return true;
 }

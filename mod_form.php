@@ -44,10 +44,10 @@ class mod_dicomviewer_mod_form extends moodleform_mod {
 
         $mform = $this->_form;
 
-        //Ajout de general.
+        // Ajout de general.
         $mform->addElement('header', 'general', get_string('general', 'form'));
 
-        //Ajout du nom.
+        // Ajout du nom.
         $mform->addElement('text', 'name', get_string('dicomviewername', 'mod_dicomviewer'), array('size' => '64'));
 
         if (!empty($CFG->formatstringstriptags)) {
@@ -56,30 +56,30 @@ class mod_dicomviewer_mod_form extends moodleform_mod {
             $mform->setType('name', PARAM_CLEANHTML);
         }
 
-        //Bouton du nom.
+        // Bouton du nom.
         $mform->addRule('name', null, 'required', null, 'client');
         $mform->addRule('name', get_string('maximumchars', '', 255), 'maxlength', 255, 'client');
         $mform->addHelpButton('name', 'dicomviewername', 'mod_dicomviewer');
 
-        //Bouton de l'instance UID.
+        // Bouton de l'instance UID.
         $mform->addElement('text', 'studyinstance', 'Study Instance UID', array('size' => '64'));
         $mform->addRule('studyinstance', null, 'required', null, 'client');
         $mform->addRule('studyinstance', get_string('maximumchars', '', 255), 'maxlength', 255, 'client');
         $mform->addHelpButton('studyinstance', 'dicomviewername', 'mod_dicomviewer');
-        
-        //Ajout de intro et introformat.
+
+        // Ajout de intro et introformat.
         if ($CFG->branch >= 29) {
             $this->standard_intro_elements();
         } else {
             $this->add_intro_editor();
         }
 
-        //Ajout du reste des paramètres.
+        // Ajout du reste des paramètres.
 
-        //Ajout des éléments standards.
+        // Ajout des éléments standards.
         $this->standard_coursemodule_elements();
 
-        //Ajout du bouton d'action.
+        // Ajout du bouton d'action.
         $this->add_action_buttons();
     }
 }
