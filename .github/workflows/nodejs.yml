@@ -19,6 +19,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: Creation of the dicomviewer folder
+      run : |
+        mkdir dicomviewer
+        mv ./* ./dicomviewer
     - name: Doowload Stone Of Orthanc Distribution
       run: |
         mkdir stone
@@ -44,12 +48,12 @@ jobs:
       run : mv ./dicomviewer/config-ohif/* ./dicomviewer/viewer-ohif
     - name: STONE Replace configuration file
       run : mv ./dicomviewer/config-stone/* ./dicomviewer/viewer-stone
-    - name: Suppression des fichiers .git
+    - name: Deleting files .git
       run : |
-        rm -rf ./.git
-        rm -rf ./.github
-        rm ./.gitignore
-        rm -rf ./Documentation
+        rm -rf ./dicomviewer/.git
+        rm -rf ./dicomviewer/.github
+        rm ./dicomviewer/.gitignore
+        rm -rf ./dicomviewer/Documentation
     - uses: actions/upload-artifact@v1
       with:
         name: dicomviewer
