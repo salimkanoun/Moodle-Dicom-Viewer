@@ -1,9 +1,10 @@
 <?php
-
 /**
  * Version du plugin
  *
  * @package     mod_dicomviewer
+ * @category    admin
+ * @license     GNU General Public License
  * @copyright   2021 | Stage DUT AS Informatique
  */
 

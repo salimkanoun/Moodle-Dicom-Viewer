@@ -1,9 +1,10 @@
 <?php
-
 /**
  * Formulaire de configuration minimal de discom viewer
  *
  * @package     mod_dicomviewer
+ * @category    admin
+ * @license     GNU General Public License
  * @copyright   2021 | Stage DUT AS Informatique
  */
 

@@ -6,7 +6,7 @@
 
 If you downloaded the plugin from the moodle repository 
 
-If you downloaded the plugin from the workflows on github (https://github.com/salimkanoun/moodle-mod_dicomviewer/actions)
+If you downloaded the plugin from the workflows Node.js CI on github (https://github.com/salimkanoun/moodle-mod_dicomviewer/actions)
 
 - If you are in neither of these cases
 

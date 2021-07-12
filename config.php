@@ -4,20 +4,18 @@
  *
  * @package     mod_dicomviewer
  * @category    admin
+ * @license     GNU General Public License
  * @copyright   2021 | Stage DUT AS Informatique
  */
-
 
 require(__DIR__.'/../../config.php');
 require_once($CFG->libdir.'/adminlib.php');
 require_once($CFG->dirroot . '/mod/dicomviewer/classes/form/config.php');
 
-
 // Allow searching by setting when providing parameter directly.
 $search = optional_param('search', '', PARAM_TEXT);
 
 admin_externalpage_setup('externalconfig', '', ['search' => $search], '', ['pagelayout' => 'report']);
-
 
 
 $formulaire = new form_config();

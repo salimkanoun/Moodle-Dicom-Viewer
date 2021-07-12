@@ -3,6 +3,8 @@
  * Affichage de la vue d'un viewer choisi
  *
  * @package     mod_dicomviewer
+ * @category    admin
+ * @license     GNU General Public License
  * @copyright   2021 | Stage DUT AS Informatique
  */
 
@@ -34,15 +36,15 @@ $PAGE->set_title(format_string($moduleinstance->name));
 $PAGE->set_heading(format_string($course->fullname));
 $PAGE->set_context($modulecontext);
 
-
 echo $OUTPUT->header();
 
 $urlViewer = get_string('ohif', 'mod_dicomviewer', $moduleinstance->studyinstance);
 $name = "OHIF Web Viewer";
 
 $templateContexte = (object)[
-	'urlViewer'=> $urlViewer,
-	'name' => $name
+    'nameAttribut'=>"src",
+	'urlViewer'=>$urlViewer,
+	'name'=>$name
 ];
 
 echo $OUTPUT->render_from_template('mod_dicomviewer/viewerWeb', $templateContexte);

@@ -1,10 +1,10 @@
 <?php
-
-
 /**
  * Librairie d'interface des fonctions
  *
  * @package     mod_dicomviewer
+ * @category    admin
+ * @license     GNU General Public License
  * @copyright   2021 | Stage DUT AS Informatique
  */
 
@@ -38,7 +38,6 @@ function dicomviewer_add_instance($moduleinstance, $mform = null) {
     $moduleinstance->timecreated = time();
 
     $id = $DB->insert_record('dicomviewer', $moduleinstance);
-
 
     return $id;
 }

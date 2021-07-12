@@ -1,10 +1,10 @@
 <?php
-
-
 /**
  * Affiche les informations sur tous les modules discomviewer
  *
  * @package     mod_dicomviewer
+ * @category    admin
+ * @license     GNU General Public License
  * @copyright   2021 | Stage DUT AS Informatique
  */
 

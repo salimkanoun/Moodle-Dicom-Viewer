@@ -1,9 +1,10 @@
 <?php
-
 /**
  * Affichage de la vue principale du plugin
  *
  * @package     mod_dicomviewer
+ * @category    admin
+ * @license     GNU General Public License
  * @copyright   2021 | Stage DUT AS Informatique
  */
 
@@ -47,6 +48,5 @@ $templateContexte = (object)[
     'studyinstance' => $moduleinstance->studyinstance
 ];
 echo $OUTPUT->render_from_template('mod_dicomviewer/view', $templateContexte);
-
 
 echo $OUTPUT->footer();

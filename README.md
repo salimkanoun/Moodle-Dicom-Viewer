@@ -6,13 +6,16 @@
 
 - Viewing images in DICOM format
 
+## Plugin documentation ##
+
+See url: https://salimkanoun.github.io/moodle_dicomviewer_website/
 
 ## Download the plugin ##
 
 
 - Directly via the moodle repository
 
-- Directly with the workflows on github (https://github.com/salimkanoun/moodle-mod_dicomviewer/actions)
+- Directly with the workflows Node.js CI on github (https://github.com/salimkanoun/moodle-mod_dicomviewer/actions)
 
 
 ## Install the plugin on moodle ##
