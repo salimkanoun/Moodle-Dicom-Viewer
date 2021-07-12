@@ -16,7 +16,7 @@
 
 /**
  * Classe formulaire de config.
- * 
+ *
  * @package     mod_dicomviewer
  * @category    admin
  * @license     GNU General Public License
@@ -36,9 +36,8 @@ class form_config extends moodleform {
     /**
      * Add elements to the form.
      */
-    public function definition(){
+    public function definition() {
         global $CFG;
- 		
         // Recuperation des champs de configuration.
         $datajsonstone = json_decode(file_get_contents('viewer-stone/configuration.json'), true);
         $datajsonohif = json_decode(file_get_contents('viewer-ohif/configuration.json'), true);
@@ -65,16 +64,15 @@ class form_config extends moodleform {
                                 $datajsonohif['servers']['dicomWeb'][0]['wadoRoot'], $attributs);
 
         $this->add_action_buttons();
-
-	}
+    }
 
     /**
      * Custom validation added.
      * Update config files of viewer-ohif and stone-ohif.
-     * 
+     *
      * @param array $data form data
      * @param object $files 
-     * @return array 
+     * @return array
      */
 	public function validation($data, $files) {
 
@@ -102,10 +100,8 @@ class form_config extends moodleform {
             $datajsonstone['StoneWebViewer']['DicomWebRoot'] = $data['stone_dicomwebroot'];
             file_put_contents("viewer-stone/configuration.json", json_encode($datajsonstone));
         }
-    
         return array();
     }
-
 }
 
 /**
@@ -119,17 +115,15 @@ class form_config extends moodleform {
  * 
  */
 function addelementclassiconform($mform, $stringtitle, $stringname, $defaultvalue, $attributs) {
-
-    // Ajour élément dans le formulaire.
+    // Ajout élément dans le formulaire.
     $mform->addElement('text', $stringname, get_string($stringtitle, 'dicomviewer'), $attributs);
     // Définit le type de l'élement.
     $mform->setType($stringname, PARAM_TEXT);   
     // Element a coté du bouton help, string dans lang du titre et de help, fichier du lang.
-    $mform->addHelpButton($stringname, $string_title, 'dicomviewer');
+    $mform->addHelpButton($stringname, $stringtitle, 'dicomviewer');
     // Valeur par défaut.
     $mform->setDefault($stringname, $defaultvalue);
-    // Element a coté, string de l'erreur, le type du role, reinitialiser a sa valeur origine ?, false.
+    // Element a coté, string de l'erreur, le type du role, reinitialiser a sa valeur origine, false.
     $mform->addRule($stringname, get_string('invalid_param', 'dicomviewer'), 'required', true, false);
-
     return true;
 }

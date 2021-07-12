@@ -41,7 +41,6 @@ if ($id) {
     $course = $DB->get_record('course', array('id' => $moduleinstance->course), '*', MUST_EXIST);
     $cm = get_coursemodule_from_instance('dicomviewer', $moduleinstance->id, $course->id, false, MUST_EXIST);
 }
- 
 require_login($course, true, $cm);
 
 $modulecontext = context_module::instance($cm->id);
@@ -57,8 +56,8 @@ $urlviewer = get_string('stoneviewer', 'mod_dicomviewer', $moduleinstance->study
 $name = "Stone Web Viewer";
 
 $templatecontexte = (object)[
-	'urlViewer' => $urlviewer,
-	'name' => $name
+    'urlViewer' => $urlviewer,
+    'name' => $name
 ];
 
 echo $OUTPUT->render_from_template('mod_dicomviewer/viewerWeb', $templatecontexte);

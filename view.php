@@ -42,7 +42,6 @@ if ($id) {
     $course = $DB->get_record('course', array('id' => $moduleinstance->course), '*', MUST_EXIST);
     $cm = get_coursemodule_from_instance('dicomviewer', $moduleinstance->id, $course->id, false, MUST_EXIST);
 }
- 
 require_login($course, true, $cm);
 
 $modulecontext = context_module::instance($cm->id);
@@ -58,8 +57,8 @@ echo $OUTPUT->header();
 $templatecontexte = (object)[
     'choiceviewer' => get_string('choiceviewer', 'mod_dicomviewer'),
     'description' => $moduleinstance->intro,
-    'urlViewerOhif' => new moodle_url('/mod/dicomviewer/viewerOhif.php', array('id'=>$cm->id)),
-    'urlViewerStone' => new moodle_url('/mod/dicomviewer/viewerStone.php', array('id'=>$cm->id)),
+    'urlViewerOhif' => new moodle_url('/mod/dicomviewer/viewerOhif.php', array('id' => $cm->id)),
+    'urlViewerStone' => new moodle_url('/mod/dicomviewer/viewerStone.php', array('id' => $cm->id)),
     'studyinstance' => $moduleinstance->studyinstance
 ];
 echo $OUTPUT->render_from_template('mod_dicomviewer/view', $templatecontexte);
