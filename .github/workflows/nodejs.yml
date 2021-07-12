@@ -20,12 +20,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Creation of the dicomviewer folder
-      run : |
-        mkdir dicomviewer
-        mv ./* /tmp/dicomviewer
+      run : mkdir dicomviewer
       working-directory: /tmp
     - name: Copy temporary dicomviewer folder
-      run : mv ./tmp/dicomviewer ./
+      run : |
+        mv ./* /tmp/dicomviewer
+        mv /tmp/dicomviewer ./
     - name: Doowload Stone Of Orthanc Distribution
       run: |
         mkdir stone
