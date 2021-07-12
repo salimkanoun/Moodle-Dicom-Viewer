@@ -24,6 +24,8 @@ cd Viewers/
 
 QUICK_BUILD=true PUBLIC_URL=/mod/dicomviewer/viewer-ohif/ yarn run build
 
+It is possible to modify this url according to the directory of your moodle site.
+
 5) Copy the files present in:  Viewers/platform/viewer/dist/*  in the plugin folder named viewer-ohif/
 
 6) Move the configuration files found at the root of the plugin (config-ohif/) in the distribution of ohif (viewer-ohif/)

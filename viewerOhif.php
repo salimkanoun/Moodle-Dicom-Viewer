@@ -1,7 +1,6 @@
 <?php
-
 /**
- * Affichage de la vue principale du plugin
+ * Affichage de la vue d'un viewer choisi
  *
  * @package     mod_dicomviewer
  * @copyright   2021 | Stage DUT AS Informatique
@@ -9,7 +8,6 @@
 
 require(__DIR__.'/../../config.php');
 require_once(__DIR__.'/lib.php');
-
 
 // Id du module de cours
 $id = optional_param('id', 0, PARAM_INT);
@@ -31,7 +29,7 @@ require_login($course, true, $cm);
 
 $modulecontext = context_module::instance($cm->id);
 
-$PAGE->set_url('/mod/dicomviewer/view.php', array('id' => $cm->id));
+$PAGE->set_url('/mod/dicomviewer/viewerOhif.php', array('id' => $cm->id));
 $PAGE->set_title(format_string($moduleinstance->name));
 $PAGE->set_heading(format_string($course->fullname));
 $PAGE->set_context($modulecontext);
@@ -39,14 +37,14 @@ $PAGE->set_context($modulecontext);
 
 echo $OUTPUT->header();
 
-$templateContexte = (object)[
-    'choiceviewer'=>get_string('choiceviewer', 'mod_dicomviewer'),
-    'description'=>$moduleinstance->intro,
-    'urlViewerOhif'=> new moodle_url('/mod/dicomviewer/viewerOhif.php', array('id'=>$cm->id)),
-    'urlViewerStone'=> new moodle_url('/mod/dicomviewer/viewerStone.php', array('id'=>$cm->id)),
-    'studyinstance' => $moduleinstance->studyinstance
-];
-echo $OUTPUT->render_from_template('mod_dicomviewer/view', $templateContexte);
+$urlViewer = get_string('ohif', 'mod_dicomviewer', $moduleinstance->studyinstance);
+$name = "OHIF Web Viewer";
 
+$templateContexte = (object)[
+	'urlViewer'=> $urlViewer,
+	'name' => $name
+];
+
+echo $OUTPUT->render_from_template('mod_dicomviewer/viewerWeb', $templateContexte);
 
 echo $OUTPUT->footer();

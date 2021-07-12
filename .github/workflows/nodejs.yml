@@ -55,7 +55,7 @@ jobs:
       run : |
         rm -rf ./dicomviewer/.git
         rm -rf ./dicomviewer/.github
-        rm ./dicomviewer/.gitignore
+        rm -f ./dicomviewer/.gitignore
         rm -rf ./dicomviewer/Documentation
     - uses: actions/upload-artifact@v1
       with:
