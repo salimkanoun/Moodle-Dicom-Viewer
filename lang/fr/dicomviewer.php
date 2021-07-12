@@ -1,4 +1,19 @@
 <?php
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
 /**
  * Chaine de caractere du plugin FR définit ici
  *
@@ -27,20 +42,20 @@ $string['dicomviewerfieldset'] = 'Ensemble des champs';
 $string['dicomviewer:view'] = 'Visionner une instance du plugin dicomviewer dans un cours';
 $string['dicomviewer:addinstance'] = 'Créer une instance de dicom viewer dans un cours';
 
-//String des viewer
+//String des viewer.
 $string['ohif'] = './viewer-ohif/viewer/{$a}';
 $string['stoneviewer'] = './viewer-stone/index.html?study={$a}';
 
-//String du mustache view.php
+//String du mustache view.php.
 $string['choiceviewer'] = 'Choisir un viewer';
 
-//String settings.php
+//String settings.php.
 $string['cancelForm'] = 'Vous avez annulé le formulaire de configuration du plug-in d\'activité Dicom Viewer';
 $string['validateForm'] = 'Configuration enregistrée avec succès';
 $string['titlestone'] = 'Stone Web Viewer';
 $string['titleohif'] = 'OHIF Viewer';
 $string['titledesc'] = 'Paramètres de configuration de DICOM Viewer';
-    //Stone
+    //Stone.
     $string['title_expected'] = 'Expected Message Origin';
     $string['title_expected_help'] = 'L\'origine autorisée des messages correspondant aux actions dynamiques
          * déclenché par une autre page Web utilisant "window.postMessage()"';
@@ -48,7 +63,7 @@ $string['titledesc'] = 'Paramètres de configuration de DICOM Viewer';
     $string['title_dicomweb'] = 'Dicom web root';
     $string['title_dicomweb_help'] = 'Chemin racine du serveur DICOMweb.';
 
-    //Ohif
+    //Ohif.
     $string['title_wadoUriRoot'] = 'Wado Uri Root';
     $string['title_wadoUriRoot_help'] = 'Adresse pour WadoUriRoot';
     $string['title_qidoRoot'] = 'Qido Root';

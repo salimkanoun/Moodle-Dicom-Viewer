@@ -1,4 +1,19 @@
 <?php
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
 /**
  * Affichage de la vue d'un viewer choisi
  *
@@ -11,10 +26,10 @@
 require(__DIR__.'/../../config.php');
 require_once(__DIR__.'/lib.php');
 
-// Id du module de cours
+//Id du module de cours.
 $id = optional_param('id', 0, PARAM_INT);
 
-// Id de l'activité
+//Id de l'activité.
 $d = optional_param('d', 0, PARAM_INT);
 
 if ($id) {
@@ -38,12 +53,12 @@ $PAGE->set_context($modulecontext);
 
 echo $OUTPUT->header();
 
-$urlViewer = get_string('stoneviewer', 'mod_dicomviewer', $moduleinstance->studyinstance);
+$urlviewer = get_string('stoneviewer', 'mod_dicomviewer', $moduleinstance->studyinstance);
 $name = "Stone Web Viewer";
 
 $templateContexte = (object)[
-	'urlViewer'=>$urlViewer,
-	'name'=>$name
+	'urlViewer' => $urlviewer,
+	'name' => $name
 ];
 
 echo $OUTPUT->render_from_template('mod_dicomviewer/viewerWeb', $templateContexte);
