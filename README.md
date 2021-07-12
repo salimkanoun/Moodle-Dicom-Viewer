@@ -49,7 +49,7 @@ GPL License
 
 This plugin distribution emmbed 2 other software projets : OHIF (MIT Licence) and Stone Of Orthanc (AGPL v3 licence). Their related source is not in this repository.
 The external code is downloaded from OHIF and Stone repositories during the Continuous Integration process.
-See the Github action CI script and the README file in the config-ohif and config-stone folder for more details.
+See the Github action CI script and the README file in the viewer-ohif and viewer-stone folder for more details.
 
 
 
