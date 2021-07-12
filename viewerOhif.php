@@ -42,7 +42,6 @@ $urlViewer = get_string('ohif', 'mod_dicomviewer', $moduleinstance->studyinstanc
 $name = "OHIF Web Viewer";
 
 $templateContexte = (object)[
-    'nameAttribut'=>"src",
 	'urlViewer'=>$urlViewer,
 	'name'=>$name
 ];

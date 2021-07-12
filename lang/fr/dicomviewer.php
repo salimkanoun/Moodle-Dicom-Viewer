@@ -1,10 +1,10 @@
 <?php
-
 /**
  * Chaine de caractere du plugin FR définit ici
  *
  * @package     mod_dicomviewer
- * @category    string
+ * @category    admin
+ * @license     GNU General Public License
  * @copyright   2021 | Stage DUT AS Informatique
  */
 
@@ -56,7 +56,3 @@ $string['titledesc'] = 'Paramètres de configuration de DICOM Viewer';
     $string['title_wadoRoot'] = 'Wado Root';
     $string['title_wadoRoot_help'] = 'Adresse pour WadoRoot';
 $string['invalid_param'] = 'Paramètre invalide ou champ vide';
-
-
-
-

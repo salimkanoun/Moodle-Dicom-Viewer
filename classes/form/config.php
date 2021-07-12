@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Classe formulaire de config
  * 
@@ -12,7 +12,10 @@ defined('MOODLE_INTERNAL') || die();
 
 //moodleform (bibliotheque formulaire)
 require_once("$CFG->libdir/formslib.php");
- 
+
+/**
+ * Form for the settings of distribution static viewer ohif and stone
+ */
 class form_config extends moodleform{
 
     /**
@@ -48,6 +51,10 @@ class form_config extends moodleform{
     /**
      * Custom validation added
      * Update config files of viewer-ohif and stone-ohif
+     * 
+     * @param data form data
+     * @param files 
+     * @return array empty array
      */
 	function validation($data, $files) {
 
@@ -83,6 +90,13 @@ class form_config extends moodleform{
 
 /**
  * Function for add an element on the form
+ * @param mform formulaire to add element
+ * @param string_title title of the element
+ * @param string_name name of the element
+ * @param defaultValue default value of the element
+ * @param attributs attribut default of the element
+ * @return boolean 
+ * 
  */
 function addElementClassicOnForm($mform, $string_title, $string_name, $defaultValue, $attributs){
 
@@ -96,5 +110,6 @@ function addElementClassicOnForm($mform, $string_title, $string_name, $defaultVa
     $mform->setDefault($string_name, $defaultValue);
     //Element a coté, string de l'erreur, le type du role, reinitialiser a sa valeur origine ?, false
     $mform->addRule($string_name, get_string('invalid_param', 'dicomviewer'), 'required', true, false);
+
     return true;
 }

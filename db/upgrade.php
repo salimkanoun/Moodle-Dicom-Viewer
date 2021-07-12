@@ -1,11 +1,10 @@
 <?php
-
-
 /**
  * Mise à jour du plugin de la db
  *
  * @package     mod_dicomviewer
- * @category    upgrade
+ * @category    admin
+ * @license     GNU General Public License
  * @copyright   2021 | Stage DUT AS Informatique
  */
 

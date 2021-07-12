@@ -42,7 +42,6 @@ $urlViewer = get_string('stoneviewer', 'mod_dicomviewer', $moduleinstance->study
 $name = "Stone Web Viewer";
 
 $templateContexte = (object)[
-    'nameAttribut'=>"src",
 	'urlViewer'=>$urlViewer,
 	'name'=>$name
 ];
