@@ -22,7 +22,7 @@ jobs:
     - name: Creation of the dicomviewer folder
       run : |
         mkdir dicomviewer
-        mv ./* ./tmp/dicomviewer
+        mv ./* /tmp/dicomviewer
       working-directory: /tmp
     - name: Copy temporary dicomviewer folder
       run : mv ./tmp/dicomviewer ./
