@@ -16,9 +16,24 @@
 
     @package     mod_dicomviewer
     @category    string
-    @template    templates/viewerOhifandviewerStone
     @license     GNU General Public License
 	@copyright   2021 | Stage DUT AS Informatique
+}}
+{{!
+    @template mod_dicomviewer/viewer_page
+    Template for the view page
+    Classes required for JS:
+    -
+    Data attributes required for JS:
+    -
+    Context variables required for this template:
+    * name
+    * urlViewer
+    Example context (json):
+    {
+      "name": "Viewer Ohif",
+      "urlViewer": "./viewer-ohif/viewer/studyInstanceUID"
+    }
 }}
 <h2>Viewer DICOM Image</h2>
 
