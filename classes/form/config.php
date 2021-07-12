@@ -71,11 +71,10 @@ class form_config extends moodleform {
      * Update config files of viewer-ohif and stone-ohif.
      *
      * @param array $data form data
-     * @param object $files 
+     * @param object $files
      * @return array
      */
-	public function validation($data, $files) {
-
+    public function validation($data, $files) {
         $arrayempty = false;
         foreach ($data as $value) {
             if (empty($value)) {
@@ -112,7 +111,6 @@ class form_config extends moodleform {
  * @param string $defaultvalue value of the element.
  * @param array $attributs default of the element.
  * @return true Validate the element
- * 
  */
 function addelementclassiconform($mform, $stringtitle, $stringname, $defaultvalue, $attributs) {
     // Ajout élément dans le formulaire.
