@@ -22,7 +22,10 @@ jobs:
     - name: Creation of the dicomviewer folder
       run : |
         mkdir dicomviewer
-        mv ./* ./dicomviewer
+        mv ./* ./tmp/dicomviewer
+      working-directory: /tmp
+    - name: Copy temporary dicomviewer folder
+      run : mv ./tmp/dicomviewer ./
     - name: Doowload Stone Of Orthanc Distribution
       run: |
         mkdir stone
