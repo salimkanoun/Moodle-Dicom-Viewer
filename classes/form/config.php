@@ -116,7 +116,7 @@ function addelementclassiconform($mform, $stringtitle, $stringname, $defaultvalu
     // Ajout élément dans le formulaire.
     $mform->addElement('text', $stringname, get_string($stringtitle, 'dicomviewer'), $attributs);
     // Définit le type de l'élement.
-    $mform->setType($stringname, PARAM_TEXT);   
+    $mform->setType($stringname, PARAM_TEXT);
     // Element a coté du bouton help, string dans lang du titre et de help, fichier du lang.
     $mform->addHelpButton($stringname, $stringtitle, 'dicomviewer');
     // Valeur par défaut.
