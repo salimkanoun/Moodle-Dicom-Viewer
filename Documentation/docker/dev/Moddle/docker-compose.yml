@@ -34,6 +34,7 @@ services:
           - "traefik.port=8080"
           - "traefik.docker.network=web"
           - "traefik.http.routers.moodle.entrypoints=web"
+          - "traefik.http.routers.moodle.rule=Host(`localhost`)"
 
     mariadb:
       image: docker.io/bitnami/mariadb:10.5
@@ -75,6 +76,7 @@ services:
           - "traefik.http.routers.orthanc.rule=PathPrefix(`/dicom-web/`)"
           - "traefik.http.routers.orthanc.entrypoints=web"
           - "traefik.docker.network=web"
+          - "traefik.http.routers.orthanc.rule=Host(`localhost`)"
 
 volumes:
     moodle_data:
