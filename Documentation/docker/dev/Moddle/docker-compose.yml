@@ -12,7 +12,7 @@ services:
 
     moodle:
       ports: ["8081:8080"]
-      image: docker.io/bitnami/moodle:3
+      image: docker.io/bitnami/moodle:4
       restart: unless-stopped
       environment:
         - TZ=Europe/Paris
@@ -32,9 +32,8 @@ services:
       labels:
           - "traefik.enable=true"
           - "traefik.port=8080"
-          - "traefik.http.routers.moodle.rule=Host(`salouma.ddns.net`)"
-          - "traefik.http.routers.moodle.entrypoints=websecure"
           - "traefik.docker.network=web"
+          - "traefik.http.routers.moodle.entrypoints=web"
 
     mariadb:
       image: docker.io/bitnami/mariadb:10.5
@@ -73,8 +72,8 @@ services:
         labels:
           - "traefik.enable=true"
           - "traefik.port=8042"
-          - "traefik.http.routers.orthanc.rule=Host(`salouma.ddns.net`) && PathPrefix(`/dicom-web/`)"
-          - "traefik.http.routers.orthanc.entrypoints=websecure"
+          - "traefik.http.routers.orthanc.rule=PathPrefix(`/dicom-web/`)"
+          - "traefik.http.routers.orthanc.entrypoints=web"
           - "traefik.docker.network=web"
 
 volumes:

@@ -1,0 +1,13 @@
+# /apps/traefik/traefik.toml
+[api]
+  dashboard = true
+  insecure = true
+
+[entryPoints]
+  [entryPoints.web]
+    address = ":80"
+
+[providers]
+  [providers.docker]
+    watch = true
+    exposedByDefault = false
