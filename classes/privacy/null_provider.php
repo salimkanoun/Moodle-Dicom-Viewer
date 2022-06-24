@@ -25,16 +25,6 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-namespace \classes\privacy;
-
-class provider implements null_provider {
-    /** 
-     * Récupère l'identifiant de la chaîne de langue avec le fichier de langue 
-     * du composant pour expliquer pourquoi ce plugin ne stocke aucune donnée. 
-     * 
-     * @return string 
-     */ 
-    public  static  function  get_reason ()  :  string  { 
-        return  'privacy:metadata' ; 
-    }
+interface null_provider {
+    public static function get_reason () : string;
 }
