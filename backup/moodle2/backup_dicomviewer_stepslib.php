@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Formulaire de configuration minimal de discom viewer
+ * Affiche les informations sur tous les modules discomviewer
  *
  * @package     mod_dicomviewer
  * @category    admin
@@ -23,6 +23,9 @@
  * @copyright   2021 | Stage DUT AS Informatique
  */
 
-interface null_provider {
-    public static function get_reason () : string;
-}
+ class backup_dicomviwer_activity_structure_step {
+
+    protected function define_structure () {
+
+    }
+ }
