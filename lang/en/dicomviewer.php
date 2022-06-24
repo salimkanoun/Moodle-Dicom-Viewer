@@ -73,5 +73,5 @@ $string['titledesc'] = 'Configuration parameters of DICOM Viewer';
     $string['title_wadoRoot_help'] = 'Address for WadoRoot';
 $string['invalid_param'] = 'Invalid parameter or empty field';
 
-// String provider.php
-$string['privacy:metadata'] = 'dicomviewer don\'t use users data. It just display medical imagery.';
+// String provider.php.
+$string['privacy:metadata'] = 'dicomviewer don\'t use users data. It just display medical imagery';
