@@ -73,10 +73,11 @@ services:
         labels:
           - "traefik.enable=true"
           - "traefik.port=8042"
+          - "traefik.http.routers.orthanc.rule=Host(`localhost`)"
           - "traefik.http.routers.orthanc.rule=PathPrefix(`/dicom-web/`)"
           - "traefik.http.routers.orthanc.entrypoints=web"
           - "traefik.docker.network=web"
-          - "traefik.http.routers.orthanc.rule=Host(`localhost`)"
+
 
 volumes:
     moodle_data:

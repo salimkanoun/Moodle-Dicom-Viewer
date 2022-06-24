@@ -23,9 +23,10 @@
  * @copyright   2021 | Stage DUT AS Informatique
  */
 
-namespace \classes\privacy;
+namespace classes\privacy;
 
-class provider implements null_provider {
+class provider implements \core_privacy\local\metadata\null_provider {
+
     /**
      * Récupère l'identifiant de la chaîne de langue avec le fichier de langue
      * du composant pour expliquer pourquoi ce plugin ne stocke aucune donnée.
