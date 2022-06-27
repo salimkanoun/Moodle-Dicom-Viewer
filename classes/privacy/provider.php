@@ -23,7 +23,7 @@
  * @copyright   2021 | Stage DUT AS Informatique
  */
 
-namespace classes\privacy;
+namespace mod_dicomviewer\classes\privacy;
 
 class provider implements \core_privacy\local\metadata\null_provider {
 
