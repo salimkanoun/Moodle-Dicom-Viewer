@@ -51,18 +51,18 @@ class config extends moodleform {
 
         $mform->addElement('header', 'headerstone', get_string('titlestone', 'dicomviewer'));
 
-        addelementclassiconform($mform, 'title_expected', 'stone_expectedorigin',
+        dicomviewer_addelementclassiconform($mform, 'title_expected', 'stone_expectedorigin',
                                 $datajsonstone['StoneWebViewer']['ExpectedMessageOrigin'], $attributs);
-        addelementclassiconform($mform, 'title_dicomweb', 'stone_dicomwebroot',
+        dicomviewer_addelementclassiconform($mform, 'title_dicomweb', 'stone_dicomwebroot',
                                 $datajsonstone['StoneWebViewer']['DicomWebRoot'], $attributs);
 
         $mform->addElement('header', 'headerohif', get_string('titleohif', 'dicomviewer'));
 
-        addelementclassiconform($mform, 'title_wadoUriRoot', 'ohif_wadoUriRoot',
+        dicomviewer_addelementclassiconform($mform, 'title_wadoUriRoot', 'ohif_wadoUriRoot',
                                 $datajsonohif['servers']['dicomWeb'][0]['wadoUriRoot'], $attributs);
-        addelementclassiconform($mform, 'title_qidoRoot', 'ohif_qidoRoot',
+        dicomviewer_addelementclassiconform($mform, 'title_qidoRoot', 'ohif_qidoRoot',
                                 $datajsonohif['servers']['dicomWeb'][0]['qidoRoot'], $attributs);
-        addelementclassiconform($mform, 'title_wadoRoot', 'ohif_wadoRoot',
+        dicomviewer_addelementclassiconform($mform, 'title_wadoRoot', 'ohif_wadoRoot',
                                 $datajsonohif['servers']['dicomWeb'][0]['wadoRoot'], $attributs);
 
         $this->add_action_buttons();
@@ -103,27 +103,4 @@ class config extends moodleform {
         }
         return array();
     }
-}
-
-/**
- * Function for add an element on the form.
- * @param object $mform formulaire to add element.
- * @param string $stringtitle title of the element.
- * @param string $stringname name of the element.
- * @param string $defaultvalue value of the element.
- * @param array $attributs default of the element.
- * @return true Validate the element
- */
-function addelementclassiconform($mform, $stringtitle, $stringname, $defaultvalue, $attributs) {
-    // Ajout élément dans le formulaire.
-    $mform->addElement('text', $stringname, get_string($stringtitle, 'dicomviewer'), $attributs);
-    // Définit le type de l'élement.
-    $mform->setType($stringname, PARAM_TEXT);
-    // Element a coté du bouton help, string dans lang du titre et de help, fichier du lang.
-    $mform->addHelpButton($stringname, $stringtitle, 'dicomviewer');
-    // Valeur par défaut.
-    $mform->setDefault($stringname, $defaultvalue);
-    // Element a coté, string de l'erreur, le type du role, reinitialiser a sa valeur origine, false.
-    $mform->addRule($stringname, get_string('invalid_param', 'dicomviewer'), 'required', true, false);
-    return true;
 }
