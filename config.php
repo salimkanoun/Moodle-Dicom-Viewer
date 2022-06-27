@@ -33,7 +33,7 @@ $search = optional_param('search', '', PARAM_TEXT);
 admin_externalpage_setup('externalconfig', '', ['search' => $search], '', ['pagelayout' => 'report']);
 
 
-$formulaire = new form_config();
+$formulaire = new mod_dicomviewer\classes\form\config();
 // Processus du formulaire.
 if ($formulaire->is_cancelled()) {
     redirect($CFG->wwwwroot . '/moodle/admin/search.php#linkmodules', get_string('cancelForm', 'dicomviewer'),

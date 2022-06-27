@@ -33,7 +33,7 @@ namespace mod_dicomviewer\classes\form;
 /**
  * Form for the settings of distribution static viewer ohif and stone.
  */
-class form_config extends moodleform {
+class config extends moodleform {
 
     /**
      * Add elements to the form.
