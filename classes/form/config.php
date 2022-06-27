@@ -40,6 +40,9 @@ class config extends moodleform {
      */
     public function definition() {
         global $CFG;
+
+        $CFG -> keeptempdirectoriesonbackup = true;
+
         // Recuperation des champs de configuration.
         $datajsonstone = json_decode(file_get_contents('viewer-stone/configuration.json'), true);
         $datajsonohif = json_decode(file_get_contents('viewer-ohif/configuration.json'), true);
