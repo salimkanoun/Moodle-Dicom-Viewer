@@ -23,12 +23,12 @@
  * @copyright   2021 | Stage DUT AS Informatique
  */
 
+namespace mod_dicomviewer\classes\form;
+
 defined('MOODLE_INTERNAL') || die();
 
 // Moodleform (bibliotheque formulaire).
 require_once("$CFG->libdir/formslib.php");
-
-namespace mod_dicomviewer\classes\form;
 
 /**
  * Form for the settings of distribution static viewer ohif and stone.

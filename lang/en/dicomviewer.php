@@ -41,7 +41,7 @@ $string['dicomviewername'] = 'Name of activity';
 $string['dicomviewerfieldset'] = 'Set of fields';
 $string['dicomviewer:view'] = 'Viewing an instance of the dicomviewer plugin in a course';
 $string['dicomviewer:addinstance'] = 'Create a dicom viewer instance in a course';
-
+$string['pluginadministration'] = 'Dicomviewer Administration';
 
 // String des viewer.
 $string['ohif'] = './viewer-ohif/viewer/{$a}';

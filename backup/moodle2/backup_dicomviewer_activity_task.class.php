@@ -15,54 +15,54 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Affiche les informations sur tous les modules discomviewer
- *
- * @package     mod_dicomviewer
- * @category    admin
- * @license     GNU General Public License
- * @copyright   2021 | Stage DUT AS Informatique
- */
+* Affiche les informations sur tous les modules discomviewer
+*
+* @package     mod_dicomviewer
+* @category    admin
+* @license     GNU General Public License
+* @copyright   2021 | Stage DUT AS Informatique
+*/
 
-require_once ($CFG -> dirroot . '/mod/dicomviewer/backup/moodle2/backup_stepslib.php');
-require_once ($CFG -> dirroot . '/mod/dicomviewer/backup/moodle2/backup_dicomviewer_settingslib.php');
+defined('MOODLE_INTERNAL') || die();
 
-/** 
-* choix de tâche de sauvegarde qui fournit tous les paramètres et les étapes pour effectuer une 
-* sauvegarde complète de l'activité 
-*/ 
- class backup_dicomviwer_task extends backup_activity_task {
+require_once($CFG -> dirroot.'/mod/dicomviewer/backup/moodle2/backup_stepslib.php');
+require_once($CFG -> dirroot.'/mod/dicomviewer/backup/moodle2/backup_dicomviewer_settingslib.php');
 
-   /** Définir (ajouter) des paramètres particuliers que cette activité peut avoir 
-     */ 
-    protected function define_my_settings () {
+/**
+* choix de tâche de sauvegarde qui fournit tous les paramètres et les étapes pour effectuer une
+* sauvegarde complète de l'activité
+*/
+class backup_dicomviwer_task extends backup_activity_task {
 
-    }
+  /** Définir (ajouter) des paramètres particuliers que cette activité peut avoir
+  */ 
+  protected function define_my_settings () {
 
-   /** 
-     * Définir (ajouter) des étapes particulières que cette activité peut avoir 
-     */ 
-    protected function define_my_steps () {
-      $this -> add_step ( new  backup_dicomviewer_activity_structure_step ( 'choice_structure' ,  'choice.xml' ));
-    }
+  }
 
-    /** 
-     * Coder les transformations à effectuer dans l'activité pour 
-     * obtenir des liens transportables (encodés) 
-     */ 
-    public static function encode_content_links ($content) {
-      global  $CFG ; 
+  /**
+  * Définir (ajouter) des étapes particulières que cette activité peut avoir
+  */
+  protected function define_my_steps () {
+    $this -> add_step (new  backup_dicomviewer_activity_structure_step('choice_structure' ,  'choice.xml'));
+  }
 
-      $base  =  preg_quote ( $CFG -> wwwroot , "/" ); 
+  /** 
+  * Coder les transformations à effectuer dans l'activité pour 
+  * obtenir des liens transportables (encodés) 
+  */ 
+  public static function encode_content_links ($content) {
+    global  $CFG;
 
-      // Lien vers la liste des choix 
-      $search = "/(" . $base . "\/mod\/dicomviewer\/index.php\?id\=)([0-9]+)/" ; 
-      $content =  preg_replace ( $search , '$@DICOMVIEWERINDEX*$2@$' ,  $content ); 
+    $base  =  preg_quote ( $CFG -> wwwroot , "/" );
 
-      // Lien vers la vue de choix par moduleid 
-      $search = "/(" . $base . "\/mod\/dicomviewer\/view.php\?id\=)([0-9]+)/" ; 
-      $content =  preg_replace ( $search ,  '$@DICOMVIEWERVIEWBYID*$2@$' ,  $content );
+    $search = "/(" . $base . "\/mod\/dicomviewer\/index.php\?id\=)([0-9]+)/";
+    $content =  preg_replace ( $search , '$@DICOMVIEWERINDEX*$2@$' ,  $content );
 
-      return $content;   
+    $search = "/(" . $base . "\/mod\/dicomviewer\/view.php\?id\=)([0-9]+)/" ;
+    $content =  preg_replace ( $search ,  '$@DICOMVIEWERVIEWBYID*$2@$' ,  $content );
+
+    return $content; 
     }
  }
  

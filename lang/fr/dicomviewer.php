@@ -41,6 +41,7 @@ $string['dicomviewername'] = 'Nom de l\'activité';
 $string['dicomviewerfieldset'] = 'Ensemble des champs';
 $string['dicomviewer:view'] = 'Visionner une instance du plugin dicomviewer dans un cours';
 $string['dicomviewer:addinstance'] = 'Créer une instance de dicom viewer dans un cours';
+$string['pluginadministration'] = 'Dicomviewer administration';
 
 // String des viewer.
 $string['ohif'] = './viewer-ohif/viewer/{$a}';
@@ -74,3 +75,5 @@ $string['invalid_param'] = 'Paramètre invalide ou champ vide';
 
 // String provider.php.
 $string['privacy:metadata'] = 'dicomviewer n\'utilise pas de donnée utilisateur. Il permet l\'affichage d\'imageries médicals externe à l\'utilisateur';
+
+$string['pluginadministration'] = '';
