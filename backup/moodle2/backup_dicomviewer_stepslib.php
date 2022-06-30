@@ -26,7 +26,7 @@
 /**
 * Définissez la structure de choix complète pour la sauvegarde, avec des annotations de fichier et d'identifiant
 */ 
-class backup_dicomviwer_activity_structure_step extends backup_activity_structure_step {
+class backup_dicomviewer_activity_structure_step extends backup_activity_structure_step {
 
    protected function define_structure () {
     

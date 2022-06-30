@@ -75,5 +75,3 @@ $string['invalid_param'] = 'Paramètre invalide ou champ vide';
 
 // String provider.php.
 $string['privacy:metadata'] = 'dicomviewer n\'utilise pas de donnée utilisateur. Il permet l\'affichage d\'imageries médicals externe à l\'utilisateur';
-
-$string['pluginadministration'] = '';

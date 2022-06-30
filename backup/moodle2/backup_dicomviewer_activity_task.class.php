@@ -25,14 +25,14 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-require_once($CFG -> dirroot.'/mod/dicomviewer/backup/moodle2/backup_stepslib.php');
+require_once($CFG -> dirroot.'/mod/dicomviewer/backup/moodle2/backup_dicomviewer_stepslib.php');
 require_once($CFG -> dirroot.'/mod/dicomviewer/backup/moodle2/backup_dicomviewer_settingslib.php');
 
 /**
 * choix de tâche de sauvegarde qui fournit tous les paramètres et les étapes pour effectuer une
 * sauvegarde complète de l'activité
 */
-class backup_dicomviwer_task extends backup_activity_task {
+class backup_dicomviewer_activity_task extends backup_activity_task {
 
   /** Définir (ajouter) des paramètres particuliers que cette activité peut avoir
   */ 
