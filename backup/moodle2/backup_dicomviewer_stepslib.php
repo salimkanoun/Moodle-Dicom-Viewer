@@ -39,7 +39,7 @@ class backup_dicomviewer_activity_structure_step extends backup_activity_structu
       // Définition des annotations de fichier.
       $dicomviewer -> annotate_files ('mod_dicomviewer' ,  'intro' ,  null ,  $contextid  =  null);  // Cette zone de fichier n'a pas d'itemid.
 
-      // Renvoyez l'élément racine (choix), enveloppé dans la structure d'activité standard.
+      // Renvoyez l'élément racine (dicomviewer), enveloppé dans la structure d'activité standard.
       return  $this -> prepare_activity_structure ($dicomviewer);
    } 
 }

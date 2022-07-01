@@ -44,7 +44,7 @@ class backup_dicomviewer_activity_task extends backup_activity_task {
   * Définir (ajouter) des étapes particulières que cette activité peut avoir
   */
   protected function define_my_steps () {
-    $this -> add_step (new  backup_dicomviewer_activity_structure_step('choice_structure' ,  'choice.xml'));
+    $this -> add_step (new  backup_dicomviewer_activity_structure_step('dicomviewer_structure' ,  'dicomviewer.xml'));
   }
 
   /** 
