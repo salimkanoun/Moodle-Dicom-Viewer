@@ -63,6 +63,13 @@ class mod_dicomviewer_mod_form extends moodleform_mod {
 
         // Bouton de l'instance UID.
         $mform->addElement('text', 'studyinstance', 'Study Instance UID', array('size' => '64'));
+        
+        if (!empty($CFG->formatstringstriptags)) {
+            $mform->setType('studyinstance', PARAM_TEXT);
+        } else {
+            $mform->setType('studyinstance', PARAM_CLEANHTML);
+        }
+
         $mform->addRule('studyinstance', null, 'required', null, 'client');
         $mform->addRule('studyinstance', get_string('maximumchars', '', 255), 'maxlength', 255, 'client');
         $mform->addHelpButton('studyinstance', 'studyInstanceUID', 'mod_dicomviewer');
