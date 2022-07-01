@@ -37,7 +37,11 @@ Actuellement Viewer Dicom possèdent deux visualisateurs:
 Pour plus d\'informations sur la configuration des visualisateurs voir la documentation et votre administrateur moodle.';
 $string['modulename_link'] = '';
 $string['modulenameplural'] = 'Viewer DICOM Image';
-$string['dicomviewername'] = 'Nom de l\'activité';
+$string['dicomviewername'] = 'Nom de l\'atcivitée';
+$string['nameOfActivity'] = 'Nom de l\'activitée';
+$string['nameOfActivity_help'] = 'Nom pour identifier l\'activitée';
+$string['studyInstanceUID'] = 'Study Insatnce UID';
+$string['studyInstanceUID_help'] = 'Le StudyInstanceUID de l\'étude DICOM à afficher dans l\'activité';
 $string['dicomviewerfieldset'] = 'Ensemble des champs';
 $string['dicomviewer:view'] = 'Visionner une instance du plugin dicomviewer dans un cours';
 $string['dicomviewer:addinstance'] = 'Créer une instance de dicom viewer dans un cours';
