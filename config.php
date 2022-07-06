@@ -25,7 +25,9 @@
 
 require(__DIR__.'/../../config.php');
 require_once($CFG->libdir.'/adminlib.php');
-require_once($CFG->dirroot . '/mod/dicomviewer/classes/form/config.php');
+require_once($CFG->dirroot . '/mod/dicomviewer/lib.php');
+
+use \mod_dicomviewer\form\config;
 
 // Allow searching by setting when providing parameter directly.
 $search = optional_param('search', '', PARAM_TEXT);
@@ -33,7 +35,7 @@ $search = optional_param('search', '', PARAM_TEXT);
 admin_externalpage_setup('externalconfig', '', ['search' => $search], '', ['pagelayout' => 'report']);
 
 
-$formulaire = new mod_dicomviewer\classes\form\config();
+$formulaire = new config();
 // Processus du formulaire.
 if ($formulaire->is_cancelled()) {
     redirect($CFG->wwwwroot . '/moodle/admin/search.php#linkmodules', get_string('cancelForm', 'dicomviewer'),

@@ -89,14 +89,14 @@ function dicomviewer_delete_instance($id) {
 }
 
 /**
- * Function for add an element on the form.
- * @param object $mform formulaire to add element.
- * @param string $stringtitle title of the element.
- * @param string $stringname name of the element.
- * @param string $defaultvalue value of the element.
- * @param array $attributs default of the element.
- * @return true Validate the element
- */
+* Function for add an element on the form.
+* @param object $mform formulaire to add element.
+* @param string $stringtitle title of the element.
+* @param string $stringname name of the element.
+* @param string $defaultvalue value of the element.
+* @param array $attributs default of the element.
+* @return true Validate the element
+*/
 function dicomviewer_addelementclassiconform($mform, $stringtitle, $stringname, $defaultvalue, $attributs) {
     // Ajout élément dans le formulaire.
     $mform->addElement('text', $stringname, get_string($stringtitle, 'dicomviewer'), $attributs);

@@ -23,9 +23,11 @@
  * @copyright   2021 | Stage DUT AS Informatique
  */
 
-namespace mod_dicomviewer\classes\privacy;
+namespace mod_dicomviewer\privacy;
 
-class provider implements \core_privacy\local\metadata\null_provider {
+use core_privacy\local\metadata\null_provider;
+
+class provider implements null_provider {
 
     /**
      * Récupère l'identifiant de la chaîne de langue avec le fichier de langue
