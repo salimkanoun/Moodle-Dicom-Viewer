@@ -24,10 +24,13 @@
  */
 
 /**
-* Définissez la structure de choix complète pour la sauvegarde, avec des annotations de fichier et d'identifiant
+* Définissez la structure de dicomviewer complète pour la sauvegarde, avec des annotations de fichier et d'identifiant
 */ 
 class backup_dicomviewer_activity_structure_step extends backup_activity_structure_step {
 
+   /**
+    * Définie la structure de données concerner par la sauvegarde.
+    */
    protected function define_structure () {
     
       // Définition des éléments.

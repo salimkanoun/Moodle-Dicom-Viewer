@@ -27,14 +27,17 @@ namespace mod_dicomviewer\privacy;
 
 use core_privacy\local\metadata\null_provider;
 
+/**
+* this class precises that no personal data is storred by the plugin.
+*/
 class provider implements null_provider {
 
     /**
-     * Récupère l'identifiant de la chaîne de langue avec le fichier de langue
-     * du composant pour expliquer pourquoi ce plugin ne stocke aucune donnée.
-     *
-     * @return string
-     */
+    * Récupère l'identifiant de la chaîne de langue avec le fichier de langue
+    * du composant pour expliquer pourquoi ce plugin ne stocke aucune donnée.
+    *
+    * @return string
+    */
     public static function  get_reason () : string {
         return  'privacy:metadata';
     }
