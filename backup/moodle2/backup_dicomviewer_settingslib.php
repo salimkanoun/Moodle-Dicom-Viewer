@@ -15,14 +15,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
-* Affiche les informations sur tous les modules discomviewer
-*
-* @package     mod_dicomviewer
-* @category    admin
-* @license     GNU General Public License
-* @copyright   2021 | Stage DUT AS Informatique
-*/
+ * Affiche les informations sur tous les modules discomviewer
+ *
+ * @package     mod_dicomviewer
+ * @category    admin
+ * @license     GNU General Public License
+ * @copyright   2021 | Stage DUT AS Informatique
+ */
 
  // This activity has not particular settings but the inherited from the generic
  // backup_activity_task so here there isn't any class definition, like the ones
- // existing in /backup/moodle2/backup_settingslib.php (activities section)
+ // existing in /backup/moodle2/backup_settingslib.php (activities section).
+ 

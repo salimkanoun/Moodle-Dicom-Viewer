@@ -43,7 +43,7 @@ class config extends moodleform {
     public function definition() {
         global $CFG;
 
-        $CFG -> keeptempdirectoriesonbackup = true;
+        $CFG -> keeptempdirectoriesonbackup=true;
 
         // Recuperation des champs de configuration.
         $datajsonstone = json_decode(file_get_contents('viewer-stone/configuration.json'), true);
@@ -56,14 +56,19 @@ class config extends moodleform {
 
         $mform->addElement('header', 'headerstone', get_string('titlestone', 'dicomviewer'));
 
-        dicomviewer_addelementclassiconform($mform, 'title_expected', 'stone_expectedorigin', $datajsonstone['StoneWebViewer']['ExpectedMessageOrigin'], $attributs);
-        dicomviewer_addelementclassiconform($mform, 'title_dicomweb', 'stone_dicomwebroot', $datajsonstone['StoneWebViewer']['DicomWebRoot'], $attributs);
+        dicomviewer_addelementclassiconform($mform, 'title_expected', 'stone_expectedorigin', $datajsonstone['StoneWebViewer']
+            ['ExpectedMessageOrigin'], $attributs);
+        dicomviewer_addelementclassiconform($mform, 'title_dicomweb', 'stone_dicomwebroot', $datajsonstone['StoneWebViewer']
+            ['DicomWebRoot'], $attributs);
 
         $mform->addElement('header', 'headerohif', get_string('titleohif', 'dicomviewer'));
 
-        dicomviewer_addelementclassiconform($mform, 'title_wadoUriRoot', 'ohif_wadoUriRoot', $datajsonohif['servers']['dicomWeb'][0]['wadoUriRoot'], $attributs);
-        dicomviewer_addelementclassiconform($mform, 'title_qidoRoot', 'ohif_qidoRoot', $datajsonohif['servers']['dicomWeb'][0]['qidoRoot'], $attributs);
-        dicomviewer_addelementclassiconform($mform, 'title_wadoRoot', 'ohif_wadoRoot', $datajsonohif['servers']['dicomWeb'][0]['wadoRoot'], $attributs);
+        dicomviewer_addelementclassiconform($mform, 'title_wadoUriRoot', 'ohif_wadoUriRoot', $datajsonohif['servers']
+            ['dicomWeb'][0]['wadoUriRoot'], $attributs);
+        dicomviewer_addelementclassiconform($mform, 'title_qidoRoot', 'ohif_qidoRoot', $datajsonohif['servers']
+            ['dicomWeb'][0]['qidoRoot'], $attributs);
+        dicomviewer_addelementclassiconform($mform, 'title_wadoRoot', 'ohif_wadoRoot', $datajsonohif['servers']
+            ['dicomWeb'][0]['wadoRoot'], $attributs);
 
         $this->add_action_buttons();
     }
