@@ -62,7 +62,7 @@ class backup_dicomviewer_activity_task extends backup_activity_task {
         $search = "/(" . $base . "\/mod\/dicomviewer\/index.php\?id\=)([0-9]+)/";
         $content = preg_replace ( $search , '$@DICOMVIEWERINDEX*$2@$' ,  $content );
 
-        $search = "/(" . $base ."\/mod\/dicomviewer\/view.php\?id\=)([0-9]+)/" ;
+        $search = "/(" . $base . "\/mod\/dicomviewer\/view.php\?id\=)([0-9]+)/";
         $content = preg_replace ( $search ,  '$@DICOMVIEWERVIEWBYID*$2@$' ,  $content );
 
         return $content;

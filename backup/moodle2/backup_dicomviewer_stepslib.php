@@ -38,7 +38,7 @@ class backup_dicomviewer_activity_structure_step extends backup_activity_structu
             'intro', 'introformat', 'studyinstance'));
 
         // Définition de la source.
-        $dicomviewer->set_source_table ( 'dicomviewer' , array ('id'=>backup::VAR_ACTIVITYID));
+        $dicomviewer->set_source_table ( 'dicomviewer' , array ('id' => backup::VAR_ACTIVITYID));
 
         // Définition des annotations de fichier.
         $dicomviewer->annotate_files ('mod_dicomviewer' ,  'intro' ,  null ,  $contextid = null);
