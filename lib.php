@@ -23,8 +23,6 @@
  * @copyright   2021 | Stage DUT AS Informatique
  */
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Retourne si le plugin supporte les fonctionnalités
  *
