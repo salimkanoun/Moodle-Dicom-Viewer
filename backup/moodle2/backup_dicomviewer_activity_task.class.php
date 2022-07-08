@@ -51,8 +51,8 @@ class backup_dicomviewer_activity_task extends backup_activity_task {
      * Coder les transformations à effectuer dans l'activité pour
      * obtenir des liens transportables (encodés)
      *
-     * @param object $content.
-     * @return object $content.
+     * @param mixed $content
+     * @return string|string[]|null $content
      */
     public static function encode_content_links ($content) {
         global  $CFG;
@@ -65,6 +65,6 @@ class backup_dicomviewer_activity_task extends backup_activity_task {
         $search = "/(" . $base ."\/mod\/dicomviewer\/view.php\?id\=)([0-9]+)/" ;
         $content = preg_replace ( $search ,  '$@DICOMVIEWERVIEWBYID*$2@$' ,  $content );
 
-        return $content; 
+        return $content;
     }
 }
