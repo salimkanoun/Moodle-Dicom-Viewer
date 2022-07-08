@@ -44,28 +44,27 @@ class backup_dicomviewer_activity_task extends backup_activity_task {
      * Définir (ajouter) des étapes particulières que cette activité peut avoir
      */
     protected function define_my_steps () {
-      $this -> add_step (new  backup_dicomviewer_activity_structure_step('dicomviewer_structure' ,  'dicomviewer.xml'));
+        $this->add_step (new  backup_dicomviewer_activity_structure_step('dicomviewer_structure' ,  'dicomviewer.xml'));
     }
 
-    /** 
-     * Coder les transformations à effectuer dans l'activité pour 
+    /**
+     * Coder les transformations à effectuer dans l'activité pour
      * obtenir des liens transportables (encodés)
      *
      * @param object $content.
      * @return object $content.
-     */ 
+     */
     public static function encode_content_links ($content) {
-      global  $CFG;
+        global  $CFG;
 
-      $base  =  preg_quote ( $CFG -> wwwroot , "/" );
+        $base = preg_quote ( $CFG->wwwroot , "/" );
 
-      $search = "/(" . $base . "\/mod\/dicomviewer\/index.php\?id\=)([0-9]+)/";
-      $content =  preg_replace ( $search , '$@DICOMVIEWERINDEX*$2@$' ,  $content );
+        $search = "/(" . $base . "\/mod\/dicomviewer\/index.php\?id\=)([0-9]+)/";
+        $content = preg_replace ( $search , '$@DICOMVIEWERINDEX*$2@$' ,  $content );
 
-      $search = "/(" . $base . "\/mod\/dicomviewer\/view.php\?id\=)([0-9]+)/" ;
-      $content =  preg_replace ( $search ,  '$@DICOMVIEWERVIEWBYID*$2@$' ,  $content );
+        $search = "/(" . $base ."\/mod\/dicomviewer\/view.php\?id\=)([0-9]+)/" ;
+        $content = preg_replace ( $search ,  '$@DICOMVIEWERVIEWBYID*$2@$' ,  $content );
 
-      return $content; 
+        return $content; 
     }
 }
- 

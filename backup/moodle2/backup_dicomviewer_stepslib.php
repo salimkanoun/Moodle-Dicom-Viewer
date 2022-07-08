@@ -25,7 +25,7 @@
 
 /**
  * Définissez la structure de dicomviewer complète pour la sauvegarde, avec des annotations de fichier et d'identifiant
- */ 
+ */
 class backup_dicomviewer_activity_structure_step extends backup_activity_structure_step {
 
     /**
@@ -33,16 +33,17 @@ class backup_dicomviewer_activity_structure_step extends backup_activity_structu
      */
     protected function define_structure () {
 
-       // Définition des éléments.
-       $dicomviewer = new backup_nested_element('dicomviewer', array('id'), array( 'name', 'timecreated', 'timemodified', 'intro', 'introformat', 'studyinstance'));
+        // Définition des éléments.
+        $dicomviewer = new backup_nested_element('dicomviewer', array('id'), array( 'name', 'timecreated', 'timemodified',
+            'intro', 'introformat', 'studyinstance'));
 
-       // Définition de la source.
-       $dicomviewer -> set_source_table ( 'dicomviewer' , array ('id' => backup :: VAR_ACTIVITYID));
+        // Définition de la source.
+        $dicomviewer->set_source_table ( 'dicomviewer' , array ('id' => backup :: VAR_ACTIVITYID));
 
-       // Définition des annotations de fichier.
-       $dicomviewer -> annotate_files ('mod_dicomviewer' ,  'intro' ,  null ,  $contextid  =  null);  // Cette zone de fichier n'a pas d'itemid.
+        // Définition des annotations de fichier.
+        $dicomviewer->annotate_files ('mod_dicomviewer' ,  'intro' ,  null ,  $contextid = null);
 
-       // Renvoyez l'élément racine (dicomviewer), enveloppé dans la structure d'activité standard.
-       return  $this -> prepare_activity_structure ($dicomviewer);
+        // Renvoyez l'élément racine (dicomviewer), enveloppé dans la structure d'activité standard.
+        return  $this->prepare_activity_structure ($dicomviewer);
     }
 }
