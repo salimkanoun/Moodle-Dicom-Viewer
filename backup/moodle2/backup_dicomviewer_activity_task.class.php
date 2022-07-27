@@ -29,28 +29,29 @@ require_once($CFG->dirroot.'/mod/dicomviewer/backup/moodle2/backup_dicomviewer_s
 require_once($CFG->dirroot.'/mod/dicomviewer/backup/moodle2/backup_dicomviewer_settingslib.php');
 
 /**
- * choix de tâche de sauvegarde qui fournit tous les paramètres et les étapes pour effectuer une
- * sauvegarde complète de l'activité
+ * Choice backup task that provides all the settings and steps to perform one
+ * complete backup of the activity
  */
 class backup_dicomviewer_activity_task extends backup_activity_task {
 
-    /** Définir (ajouter) des paramètres particuliers que cette activité peut avoir
+    /** 
+     * Define (add) particular settings this activity can have
      */
     protected function define_my_settings () {
 
     }
 
     /**
-     * Définir (ajouter) des étapes particulières que cette activité peut avoir
+     * Define (add) particular steps this activity can have
      */
     protected function define_my_steps () {
         $this->add_step (new  backup_dicomviewer_activity_structure_step('dicomviewer_structure' ,  'dicomviewer.xml'));
     }
 
     /**
-     * Coder les transformations à effectuer dans l'activité pour
-     * obtenir des liens transportables (encodés)
-     *
+     * Code the transformations to perform in the activity in
+     * order to get transportable (encoded) links
+     * 
      * @param mixed $content
      * @return string|string[]|null $content
      */
