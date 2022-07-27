@@ -34,7 +34,7 @@ require_once($CFG->dirroot.'/mod/dicomviewer/backup/moodle2/backup_dicomviewer_s
  */
 class backup_dicomviewer_activity_task extends backup_activity_task {
 
-    /** 
+    /**
      * Define (add) particular settings this activity can have
      */
     protected function define_my_settings () {
@@ -51,7 +51,7 @@ class backup_dicomviewer_activity_task extends backup_activity_task {
     /**
      * Code the transformations to perform in the activity in
      * order to get transportable (encoded) links
-     * 
+     *
      * @param mixed $content
      * @return string|string[]|null $content
      */
