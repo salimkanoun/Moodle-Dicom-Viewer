@@ -6,6 +6,10 @@
 [entryPoints]
   [entryPoints.web]
     address = ":80"
+  [entryPoints.websecure]
+    address = ":443"
+  [entryPoints.other]
+    address = ":9090"
 
 [providers]
   [providers.docker]

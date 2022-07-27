@@ -50,39 +50,7 @@ services:
       volumes:
         - 'mariadb_data:/bitnami/mariadb'
     
-    orthanc:
-        image: osimis/orthanc:21.1.7
-        container_name: orthanc
-        restart: unless-stopped
-        ports: ["8042:8042"]
-        volumes: 
-          - orthanc:/var/lib/orthanc/db:Z
-        networks:
-          - internal
-          - web
-        environment:
-            ORTHANC__AUTHENTICATION_ENABLED: "false"
-            DICOM_WEB_PLUGIN_ENABLED: "true"
-            ORTHANC__DICOM_WEB__ENABLE: "true"
-            ORTHANC__DICOM_WEB__ROOT: "/dicom-web/"
-            ORTHANC__DICOM_WEB__ENABLEWADO: "true"
-            ORTHANC__DICOM_WEB__WADOROOT: "/wado"
-            ORTHANC__DICOM_WEB__SSL: "true"
-            ORTHANC__DICOM_WEB__STUDIESMETADATA: "MainDicomTags"
-            ORTHANC__DICOM_WEB__SERIESMETADATA: "Full"
-        labels:
-          - "traefik.enable=true"
-          - "traefik.port=8042"
-          - "traefik.http.routers.orthanc.rule=Host(`localhost`)"
-          - "traefik.http.routers.orthanc.rule=PathPrefix(`/dicom-web/`)"
-          - "traefik.http.routers.orthanc.entrypoints=web"
-          - "traefik.docker.network=web"
-
-
 volumes:
     moodle_data:
     moodledata_data:
-    orthanc:
-    orthancpacs:
-    orthanctoolsjs:
     mariadb_data:

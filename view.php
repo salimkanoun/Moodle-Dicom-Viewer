@@ -26,7 +26,6 @@
 require(__DIR__.'/../../config.php');
 require_once(__DIR__.'/lib.php');
 
-
 // Id du module de cours.
 $id = optional_param('id', 0, PARAM_INT);
 
