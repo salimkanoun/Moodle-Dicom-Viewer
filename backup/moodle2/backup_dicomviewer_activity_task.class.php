@@ -31,11 +31,10 @@ require_once($CFG->dirroot.'/mod/dicomviewer/backup/moodle2/backup_dicomviewer_s
 /**
  * Choice backup task that provides all the settings and steps to perform one
  * complete backup of the activity
- * 
+ *
  * @package     mod_dicomviewer
  * @category    admin
  * @license     GNU General Public License
- * @copyright   2021 | Stage DUT AS Informatique
  */
 class backup_dicomviewer_activity_task extends backup_activity_task {
 
