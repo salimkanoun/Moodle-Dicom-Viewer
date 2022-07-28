@@ -33,7 +33,7 @@ require_once($CFG->dirroot.'/mod/dicomviewer/backup/moodle2/backup_dicomviewer_s
  * complete backup of the activity
  *
  * @package     mod_dicomviewer
- * @category    admin
+ * @copyright   2021 | Stage DUT AS Informatique
  * @license     GNU General Public License
  */
 class backup_dicomviewer_activity_task extends backup_activity_task {
