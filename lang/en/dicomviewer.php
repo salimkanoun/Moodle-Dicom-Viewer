@@ -37,11 +37,15 @@ Viewer Dicom has two viewers:
 For more information on configuring viewers see the documentation and your moodle administrator.';
 $string['modulename_link'] = '';
 $string['modulenameplural'] = 'Viewer DICOM Image';
-$string['dicomviewername'] = 'Name of activity';
+$string['dicomviewername'] = 'Name of atcivity';
+$string['nameOfActivity'] = 'Name of activity';
+$string['nameOfActivity_help'] = 'Name to identify the activity';
+$string['studyInstanceUID'] = 'Study Insatnce UID';
+$string['studyInstanceUID_help'] = 'The StudyInstanceUID of the DICOM study to be displayed in the activity';
 $string['dicomviewerfieldset'] = 'Set of fields';
 $string['dicomviewer:view'] = 'Viewing an instance of the dicomviewer plugin in a course';
 $string['dicomviewer:addinstance'] = 'Create a dicom viewer instance in a course';
-
+$string['pluginadministration'] = 'Dicomviewer Administration';
 
 // String des viewer.
 $string['ohif'] = './viewer-ohif/viewer/{$a}';
@@ -72,3 +76,6 @@ $string['titledesc'] = 'Configuration parameters of DICOM Viewer';
     $string['title_wadoRoot'] = 'Wado Root';
     $string['title_wadoRoot_help'] = 'Address for WadoRoot';
 $string['invalid_param'] = 'Invalid parameter or empty field';
+
+// String provider.php.
+$string['privacy:metadata'] = 'dicomviewer don\'t use users data. It just display medical imagery';

@@ -23,8 +23,6 @@
  * @copyright   2021 | Stage DUT AS Informatique
  */
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Retourne si le plugin supporte les fonctionnalités
  *
@@ -34,6 +32,8 @@ defined('MOODLE_INTERNAL') || die();
 function dicomviewer_supports($feature) {
     switch ($feature) {
         case FEATURE_MOD_INTRO:
+            return true;
+        case FEATURE_BACKUP_MOODLE2:
             return true;
         default:
             return null;
@@ -83,5 +83,28 @@ function dicomviewer_delete_instance($id) {
     global $DB;
 
     $DB->delete_records('dicomviewer', array('id' => $id));
+    return true;
+}
+
+/**
+ * Function for add an element on the form.
+ * @param object $mform formulaire to add element.
+ * @param string $stringtitle title of the element.
+ * @param string $stringname name of the element.
+ * @param string $defaultvalue value of the element.
+ * @param array $attributs default of the element.
+ * @return true Validate the element.
+ */
+function dicomviewer_addelementclassiconform($mform, $stringtitle, $stringname, $defaultvalue, $attributs) {
+    // Ajout élément dans le formulaire.
+    $mform->addElement('text', $stringname, get_string($stringtitle, 'dicomviewer'), $attributs);
+    // Définit le type de l'élement.
+    $mform->setType($stringname, PARAM_TEXT);
+    // Element a coté du bouton help, string dans lang du titre et de help, fichier du lang.
+    $mform->addHelpButton($stringname, $stringtitle, 'dicomviewer');
+    // Valeur par défaut.
+    $mform->setDefault($stringname, $defaultvalue);
+    // Element a coté, string de l'erreur, le type du role, reinitialiser a sa valeur origine, false.
+    $mform->addRule($stringname, get_string('invalid_param', 'dicomviewer'), 'required', true, false);
     return true;
 }

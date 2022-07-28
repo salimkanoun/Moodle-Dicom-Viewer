@@ -59,13 +59,20 @@ class mod_dicomviewer_mod_form extends moodleform_mod {
         // Bouton du nom.
         $mform->addRule('name', null, 'required', null, 'client');
         $mform->addRule('name', get_string('maximumchars', '', 255), 'maxlength', 255, 'client');
-        $mform->addHelpButton('name', 'dicomviewername', 'mod_dicomviewer');
+        $mform->addHelpButton('name', 'nameOfActivity', 'mod_dicomviewer');
 
         // Bouton de l'instance UID.
         $mform->addElement('text', 'studyinstance', 'Study Instance UID', array('size' => '64'));
+
+        if (!empty($CFG->formatstringstriptags)) {
+            $mform->setType('studyinstance', PARAM_TEXT);
+        } else {
+            $mform->setType('studyinstance', PARAM_CLEANHTML);
+        }
+
         $mform->addRule('studyinstance', null, 'required', null, 'client');
         $mform->addRule('studyinstance', get_string('maximumchars', '', 255), 'maxlength', 255, 'client');
-        $mform->addHelpButton('studyinstance', 'dicomviewername', 'mod_dicomviewer');
+        $mform->addHelpButton('studyinstance', 'studyInstanceUID', 'mod_dicomviewer');
 
         // Ajout de intro et introformat.
         if ($CFG->branch >= 29) {

@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version du plugin
+ * Formulaire de configuration minimal de discom viewer
  *
  * @package     mod_dicomviewer
  * @category    admin
@@ -23,10 +23,22 @@
  * @copyright   2021 | Stage DUT AS Informatique
  */
 
-defined('MOODLE_INTERNAL') || die();
+namespace mod_dicomviewer\privacy;
 
-$plugin->component = 'mod_dicomviewer';
-$plugin->release = '1.1.0';
-$plugin->version = 2021071200;
-$plugin->requires = 2021051700;
-$plugin->maturity = MATURITY_BETA;
+use core_privacy\local\metadata\null_provider;
+
+/**
+ * this class precises that no personal data is storred by the plugin.
+ */
+class provider implements null_provider {
+
+    /**
+     * Récupère l'identifiant de la chaîne de langue avec le fichier de langue
+     * du composant pour expliquer pourquoi ce plugin ne stocke aucune donnée.
+     *
+     * @return string
+     */
+    public static function  get_reason () : string {
+        return  'privacy:metadata';
+    }
+}

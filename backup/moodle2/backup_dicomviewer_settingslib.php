@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version du plugin
+ * Affiche les informations sur tous les modules discomviewer
  *
  * @package     mod_dicomviewer
  * @category    admin
@@ -23,10 +23,6 @@
  * @copyright   2021 | Stage DUT AS Informatique
  */
 
-defined('MOODLE_INTERNAL') || die();
-
-$plugin->component = 'mod_dicomviewer';
-$plugin->release = '1.1.0';
-$plugin->version = 2021071200;
-$plugin->requires = 2021051700;
-$plugin->maturity = MATURITY_BETA;
+ // This activity has not particular settings but the inherited from the generic
+ // backup_activity_task so here there isn't any class definition, like the ones
+ // existing in /backup/moodle2/backup_settingslib.php (activities section).
