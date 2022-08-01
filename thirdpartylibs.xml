@@ -3,14 +3,14 @@
     <library>
         <location>/viewer-ohif/</location>
         <name>OHIF</name>
-        <version>v2.0.0</version>
+        <version>v4.12.30</version>
         <license>MIT</license>
         <licenseversion></licenseversion>
     </library>
     <library>
         <location>/viewer-stone/</location>
         <name>StoneWebViewer</name>
-        <version>v2.1</version>
+        <version>v2.3</version>
         <license>AGPL</license>
         <licenseversion>3</licenseversion>
     </library>
