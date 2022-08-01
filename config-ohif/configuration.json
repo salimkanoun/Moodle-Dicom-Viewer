@@ -6,7 +6,7 @@
 		"disableServersCache": false,
 	  	"studyPrefetcher": {
 		    "enabled": true,
-		    "order": 'closest',
+		    "order": "closest",
 		    "displaySetCount": 3,
 		    "preventCache": false,
 		    "prefetchDisplaySetsTimeout": 300,
