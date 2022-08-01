@@ -84,12 +84,6 @@
 		return data.json()
 	}).then ((json)=>{
 		window.config = json;
-	}).then (()=> {
-		let bodyID = document.getElementsByTagName("body")[0]
-		let newScript = document.createElement('script')
-		newScript.type = 'text/javascript'
-		newScript.src = '/mod/dicomviewer/viewer-ohif/app.bundle.19743b34734a92216c25.js'
-		bodyID.appendChild(newScript)
 	}).catch( (error)=>{
 		console.log(error)
 	})
@@ -97,7 +91,7 @@
    
    </script>
 
-<link href="/mod/dicomviewer/viewer-ohif/app.777cc8946ff058627695.css" rel="stylesheet"></head>
+</head>
 
 <body>
   <noscript> You need to enable JavaScript to run this app. </noscript>
