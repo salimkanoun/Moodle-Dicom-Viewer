@@ -40,7 +40,7 @@ jobs:
       run: |
         mkdir ohif
         cd ohif
-        git clone https://github.com/OHIF/Viewers.git
+        git clone --depth 1 --branch @ohif/viewer@4.12.30 https://github.com/OHIF/Viewers.git
         cd Viewers
         yarn install
         QUICK_BUILD=true PUBLIC_URL=/mod/dicomviewer/viewer-ohif/ yarn run build
