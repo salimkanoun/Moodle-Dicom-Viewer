@@ -76,7 +76,7 @@
    
 	window.config = await fetch('/mod/dicomviewer/viewer-ohif/configuration.json').then( (data)=>{
 		return data.json()
-	}).catch( (error)=>{
+	}).then((json) => {window.config['servers'] = json.servers}).catch( (error)=>{
 		console.log(error)
 	})
 
