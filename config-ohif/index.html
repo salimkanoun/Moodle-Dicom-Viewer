@@ -70,6 +70,22 @@
     window.PUBLIC_URL = '/mod/dicomviewer/viewer-ohif/';
   </script>
   <script rel="preload" as="script" type="text/javascript" src="/mod/dicomviewer/viewer-ohif/app-config.js"></script>
+		  <script>
+console.log('la')
+  </script>
+	  <!-- EXTENSIONS -->
+  <script type="module">
+	await fetch('/mod/dicomviewer/viewer-ohif/configuration.json').then( (data)=>{
+		return data.json()
+	}).then((json) => {window.config['dataSources'] = json.dataSources}).then(() => console.log(window.config) ).catch( (error)=>{
+		console.log(error)
+	})
+  </script>
+	
+	  <script>
+console.log('ici')
+  </script>
+	
   <script rel="preload" as="script" type="module" src="/mod/dicomviewer/viewer-ohif/init-service-worker.js"></script>
 
   <title>OHIF Viewer</title>
@@ -78,14 +94,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,500,700&display=swap" rel="stylesheet" rel="preload" as="style"/>
 
-  <!-- EXTENSIONS -->
-  <script type="module">
-	await fetch('/mod/dicomviewer/viewer-ohif/configuration.json').then( (data)=>{
-		return data.json()
-	}).then((json) => {window.config['dataSources'] = json.dataSources}).catch( (error)=>{
-		console.log(error)
-	})
-  </script>
+
 
 </head>
 
