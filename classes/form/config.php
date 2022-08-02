@@ -94,9 +94,9 @@ class config extends moodleform {
 
             // Modifier le fichier configuration.json du viewer-ohif.
             $datajsonohif = json_decode(file_get_contents('viewer-ohif/configuration.json'), true);
-            $datajsonohif['servers']['dicomWeb'][0]['wadoUriRoot'] = $data['ohif_wadoUriRoot'];
-            $datajsonohif['servers']['dicomWeb'][0]['qidoRoot'] = $data['ohif_qidoRoot'];
-            $datajsonohif['servers']['dicomWeb'][0]['wadoRoot'] = $data['ohif_wadoRoot'];
+            $datajsonohif['dataSources'][0]['configuration']['wadoUriRoot'] = $data['ohif_wadoUriRoot'];
+            $datajsonohif['dataSources'][0]['configuration']['qidoRoot'] = $data['ohif_qidoRoot'];
+            $datajsonohif['dataSources'][0]['configuration']['wadoRoot'] = $data['ohif_wadoRoot'];
 
             file_put_contents("viewer-ohif/configuration.json", json_encode($datajsonohif));
 
