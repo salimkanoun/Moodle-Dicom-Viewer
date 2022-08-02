@@ -48,7 +48,7 @@ $string['dicomviewer:addinstance'] = 'Create a dicom viewer instance in a course
 $string['pluginadministration'] = 'Dicomviewer Administration';
 
 // String des viewer.
-$string['ohif'] = './viewer-ohif/viewer/{$a}';
+$string['ohif'] = './viewer-ohif/viewer?StudyInstanceUIDs={$a}';
 $string['stoneviewer'] = './viewer-stone/index.html?study={$a}';
 
 // String du mustache view.php.
