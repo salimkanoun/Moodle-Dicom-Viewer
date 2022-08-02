@@ -73,7 +73,7 @@
 	  <!-- EXTENSIONS -->
    <script type="module" >
    
-	await fetch('/mod/dicomviewer/viewer-ohif/configuration.json').then( (data)=>{
+	window.config = await fetch('/mod/dicomviewer/viewer-ohif/configuration.json').then( (data)=>{
 		return data.json()
 	}).then ((json)=>{
 		window.config = json;
