@@ -1,0 +1,19 @@
+{
+	"dataSources": [{
+		"friendlyName": "dcmjs DICOMWeb Server",
+		"namespace": "@ohif/extension-default.dataSourcesModule.dicomweb",
+		"sourceName": "dicomweb",
+		"configuration": {
+			"name": "Orthanc",
+			"wadoUriRoot": "/wado",
+			"qidoRoot": "/dicom-web",
+			"wadoRoot": "/dicom-web",
+			"qidoSupportsIncludeField": true,
+			"imageRendering": "wadors",
+			"enableStudyLazyLoad": true,
+			"thumbnailRendering": "wadors",
+			"supportsFuzzyMatching": true,
+			"supportsWildcard": true
+		}
+	}]
+}
