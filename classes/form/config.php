@@ -63,9 +63,9 @@ class config extends moodleform {
 
         $mform->addElement('header', 'headerohif', get_string('titleohif', 'dicomviewer'));
 
-        dicomviewer_addelementclassiconform($mform, 'title_wadoUriRoot', 'ohif_wadoUriRoot', 
+        dicomviewer_addelementclassiconform($mform, 'title_wadoUriRoot', 'ohif_wadoUriRoot',
                                             $datajsonohif['dataSources'][0]['configuration']['wadoUriRoot'], $attributs);
-        dicomviewer_addelementclassiconform($mform, 'title_qidoRoot', 'ohif_qidoRoot', 
+        dicomviewer_addelementclassiconform($mform, 'title_qidoRoot', 'ohif_qidoRoot',
                                             $datajsonohif['dataSources'][0]['configuration']['qidoRoot'], $attributs);
         dicomviewer_addelementclassiconform($mform, 'title_wadoRoot', 'ohif_wadoRoot',
                                             $datajsonohif['dataSources'][0]['configuration']['wadoRoot'], $attributs);
