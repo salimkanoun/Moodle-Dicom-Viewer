@@ -3,7 +3,7 @@
     <library>
         <location>/viewer-ohif/</location>
         <name>OHIF</name>
-        <version>v4.12.30</version>
+        <version>v4.9.21</version>
         <license>MIT</license>
         <licenseversion></licenseversion>
     </library>
