@@ -74,7 +74,7 @@
 console.log('la')
   </script>
 	  <!-- EXTENSIONS -->
-  <script rel="preload" type="module">
+  <script rel="preload" as="script" type="module">
 	await fetch('/mod/dicomviewer/viewer-ohif/configuration.json').then( (data)=>{
 		return data.json()
 	}).then((json) => {window.config['dataSources'] = json.dataSources}).then(() => console.log(window.config) ).catch( (error)=>{
