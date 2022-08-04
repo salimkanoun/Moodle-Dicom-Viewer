@@ -16,40 +16,7 @@ window.config = {
         prefetch: 10,
     },
     // filterQueryParam: false,
-    dataSources:  [
-    {
-      friendlyName: 'dcmjs DICOMWeb Server',
-      namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
-      sourceName: 'dicomweb',
-      configuration: {
-        name: 'DCM4CHEE',
-        wadoUriRoot: 'https://server.dcmjs.org/dcm4chee-arc/aets/DCM4CHEE/wado',
-        qidoRoot: 'https://server.dcmjs.org/dcm4chee-arc/aets/DCM4CHEE/rs',
-        wadoRoot: 'https://server.dcmjs.org/dcm4chee-arc/aets/DCM4CHEE/rs',
-        qidoSupportsIncludeField: true,
-        supportsReject: true,
-        imageRendering: 'wadors',
-        thumbnailRendering: 'wadors',
-        enableStudyLazyLoad: true,
-        supportsFuzzyMatching: true,
-        supportsWildcard: true,
-      },
-    },
-    {
-      friendlyName: 'dicom json',
-      namespace: '@ohif/extension-default.dataSourcesModule.dicomjson',
-      sourceName: 'dicomjson',
-      configuration: {
-        name: 'json',
-      },
-    },
-    {
-      friendlyName: 'dicom local',
-      namespace: '@ohif/extension-default.dataSourcesModule.dicomlocal',
-      sourceName: 'dicomlocal',
-      configuration: {},
-    },
-  ],
+    dataSources: localDataSources,
     httpErrorHandler: error => {
         // This is 429 when rejected from the public idc sandbox too often.
         console.warn(error.status);
