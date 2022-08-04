@@ -43,7 +43,7 @@ See url: https://salimkanoun.github.io/moodle_dicomviewer_website/
 
 GPL License
 
-2021 | Stage DUT AS Informatique
+Copyright : Salim Kanoun, Julien Bedia, Victor Cazal 
 
 ## License Notice ##
 
