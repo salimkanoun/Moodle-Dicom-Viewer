@@ -25,27 +25,26 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+require_once($CFG->dirroot . '/mod/dicomviewer/backup/moodle2/restore_dicomviewer_stepslib.php'); // Because it exists (must).
+
 /**
  * dicomviewer restore task that provides all the settings and steps to perform one
  * complete restore of the activity
  */
-
-require_once($CFG->dirroot . '/mod/dicomviewer/backup/moodle2/restore_dicomviewer_stepslib.php'); // Because it exists (must)
-
 class restore_dicomviewer_activity_task extends restore_activity_task {
 
     /**
      * Define (add) particular settings this activity can have
      */
     protected function define_my_settings() {
-        // No particular settings for this activity
+        // No particular settings for this activity.
     }
 
     /**
      * Define (add) particular steps this activity can have
      */
     protected function define_my_steps() {
-        // dicomviewer only has one structure step
+        // Dicomviewer only has one structure step.
         $this->add_step(new restore_dicomviewer_activity_structure_step('dicomviewer_structure', 'dicomviewer.xml'));
     }
 
@@ -53,7 +52,7 @@ class restore_dicomviewer_activity_task extends restore_activity_task {
      * Define the contents in the activity that must be
      * processed by the link decoder
      */
-    static public function define_decode_contents() {
+    public static function define_decode_contents() {
         $contents = array();
 
         $contents[] = new restore_decode_content('dicomviewer', array('intro'), 'dicomviewer');
@@ -65,7 +64,7 @@ class restore_dicomviewer_activity_task extends restore_activity_task {
      * Define the decoding rules for links belonging
      * to the activity to be executed by the link decoder
      */
-    static public function define_decode_rules() {
+    public static function define_decode_rules() {
         $rules = array();
 
         $rules[] = new restore_decode_rule('DICOMVIEWERVIEWBYID', '/mod/dicomviewer/view.php?id=$1', 'course_module');
@@ -80,7 +79,7 @@ class restore_dicomviewer_activity_task extends restore_activity_task {
      * dicomviewer logs. It must return one array
      * of {@link restore_log_rule} objects
      */
-    static public function define_restore_log_rules() {
+    public static function define_restore_log_rules() {
         $rules = array();
 
         $rules[] = new restore_log_rule('dicomviewer', 'add', 'view.php?id={course_module}', '{dicomviewer}');
@@ -103,10 +102,10 @@ class restore_dicomviewer_activity_task extends restore_activity_task {
      * by the restore final task, but are defined here at
      * activity level. All them are rules not linked to any module instance (cmid = 0)
      */
-    static public function define_restore_log_rules_for_course() {
+    public static function define_restore_log_rules_for_course() {
         $rules = array();
 
-        // Fix old wrong uses (missing extension)
+        // Fix old wrong uses (missing extension).
         $rules[] = new restore_log_rule('dicomviewer', 'view all', 'index?id={course}', null, null, null, 'index.php?id={course}');
         $rules[] = new restore_log_rule('dicomviewer', 'view all', 'index.php?id={course}', null);
         return $rules;

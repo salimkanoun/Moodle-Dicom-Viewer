@@ -23,13 +23,14 @@
  * @copyright   2021 | Stage DUT AS Informatique
  */
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Structure step to restore one dicomviewer activity
  */
 class restore_dicomviewer_activity_structure_step extends restore_activity_structure_step {
 
+    /**
+     * @return $paths
+     */
     protected function define_structure() {
 
         $paths = array();
@@ -37,10 +38,14 @@ class restore_dicomviewer_activity_structure_step extends restore_activity_struc
         $paths[] = new restore_path_element('dicomviewer', '/activity/dicomviewer');
         $paths[] = new restore_path_element('dicomviewer_option', '/activity/dicomviewer/options/option');
 
-        // Return the paths wrapped into standard activity structure
+        // Return the paths wrapped into standard activity structure.
         return $this->prepare_activity_structure($paths);
     }
 
+    /**
+     * Insert the dicomviwer record
+     * @param mixed $data
+     */
     protected function process_dicomviewer($data) {
         global $DB;
 
@@ -51,12 +56,15 @@ class restore_dicomviewer_activity_structure_step extends restore_activity_struc
         $data->timeopen = $this->apply_date_offset($data->timeopen);
         $data->timeclose = $this->apply_date_offset($data->timeclose);
 
-        // insert the dicomviwer record
+        // Insert the dicomviwer record.
         $newitemid = $DB->insert_record('dicomviewer', $data);
-        // immediately after inserting "activity" record, call this
+        // Immediately after inserting "activity" record, call this.
         $this->apply_activity_instance($newitemid);
     }
 
+    /**
+     * @param mixed $data
+     */
     protected function process_dicomviewer_option($data) {
         global $DB;
 
@@ -69,8 +77,11 @@ class restore_dicomviewer_activity_structure_step extends restore_activity_struc
         $this->set_mapping('dicomviewer_option', $oldid, $newitemid);
     }
 
+    /**
+     * Add dicomviewer related files
+     */
     protected function after_execute() {
-        // Add dicomviewer related files, no need to match by itemname (just internally handled context)
-        $this->add_related_files('mod_dicomviewer', 'intro', null);        
+        // Add dicomviewer related files, no need to match by itemname (just internally handled context).
+        $this->add_related_files('mod_dicomviewer', 'intro', null);
     }
 }
