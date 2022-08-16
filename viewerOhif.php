@@ -23,8 +23,8 @@
  * @copyright   2021 | Stage DUT AS Informatique
  */
 
-require(__DIR__.'/../../config.php');
-require_once(__DIR__.'/lib.php');
+require(__DIR__ . '/../../config.php');
+require_once(__DIR__ . '/lib.php');
 
 // Id du module de cours.
 $id = optional_param('id', 0, PARAM_INT);
@@ -52,7 +52,8 @@ $PAGE->set_context($modulecontext);
 
 echo $OUTPUT->header();
 
-$urlviewer = get_string('ohif', 'mod_dicomviewer', $moduleinstance->studyinstance);
+// String des viewer.
+$urlviewer = './viewer-ohif/viewer?StudyInstanceUIDs=' . $moduleinstance->studyinstance;
 $name = "OHIF Web Viewer";
 
 $templatecontexte = (object)[

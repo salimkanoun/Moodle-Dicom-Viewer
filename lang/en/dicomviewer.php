@@ -47,10 +47,6 @@ $string['dicomviewer:view'] = 'Viewing an instance of the dicomviewer plugin in 
 $string['dicomviewer:addinstance'] = 'Create a dicom viewer instance in a course';
 $string['pluginadministration'] = 'Dicomviewer Administration';
 
-// String des viewer.
-$string['ohif'] = './viewer-ohif/viewer?StudyInstanceUIDs={$a}';
-$string['stoneviewer'] = './viewer-stone/index.html?study={$a}';
-
 // String du mustache view.php.
 $string['choiceviewer'] = 'Choose the viewer';
 
@@ -60,21 +56,21 @@ $string['validateForm'] = 'Configuration saved successfully';
 $string['titlestone'] = 'Stone Web Viewer';
 $string['titleohif'] = 'OHIF Viewer';
 $string['titledesc'] = 'Configuration parameters of DICOM Viewer';
-    // Stone.
-    $string['title_expected'] = 'Expected origin message';
-    $string['title_expected_help'] = 'The allowed origin for messages corresponding to dynamic actions
+// Stone.
+$string['title_expected'] = 'Expected origin message';
+$string['title_expected_help'] = 'The allowed origin for messages corresponding to dynamic actions
          * triggered by another Web page using "window.postMessage()"';
 
-    $string['title_dicomweb'] = 'Dicom web root';
-    $string['title_dicomweb_help'] = 'Root path of the DICOMweb server.';
+$string['title_dicomweb'] = 'Dicom web root';
+$string['title_dicomweb_help'] = 'Root path of the DICOMweb server.';
 
-    // Ohif.
-    $string['title_wadoUriRoot'] = 'Wado Uri Root';
-    $string['title_wadoUriRoot_help'] = 'Address for WadoUriRoot';
-    $string['title_qidoRoot'] = 'Qido Root';
-    $string['title_qidoRoot_help'] = 'Address for QidoRoot';
-    $string['title_wadoRoot'] = 'Wado Root';
-    $string['title_wadoRoot_help'] = 'Address for WadoRoot';
+// Ohif.
+$string['title_wadoUriRoot'] = 'Wado Uri Root';
+$string['title_wadoUriRoot_help'] = 'Address for WadoUriRoot';
+$string['title_qidoRoot'] = 'Qido Root';
+$string['title_qidoRoot_help'] = 'Address for QidoRoot';
+$string['title_wadoRoot'] = 'Wado Root';
+$string['title_wadoRoot_help'] = 'Address for WadoRoot';
 $string['invalid_param'] = 'Invalid parameter or empty field';
 
 // String provider.php.
