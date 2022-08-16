@@ -62,6 +62,7 @@ class restore_dicomviewer_activity_structure_step extends restore_activity_struc
     }
 
     /**
+     * Insert the dicomviwer option record
      * @param mixed $data
      */
     protected function process_dicomviewer_option($data) {
