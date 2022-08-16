@@ -29,6 +29,7 @@
 class restore_dicomviewer_activity_structure_step extends restore_activity_structure_step {
 
     /**
+     * Return the paths wrapped into standard activity structure
      * @return $paths
      */
     protected function define_structure() {
@@ -38,7 +39,6 @@ class restore_dicomviewer_activity_structure_step extends restore_activity_struc
         $paths[] = new restore_path_element('dicomviewer', '/activity/dicomviewer');
         $paths[] = new restore_path_element('dicomviewer_option', '/activity/dicomviewer/options/option');
 
-        // Return the paths wrapped into standard activity structure.
         return $this->prepare_activity_structure($paths);
     }
 
@@ -56,7 +56,6 @@ class restore_dicomviewer_activity_structure_step extends restore_activity_struc
         $data->timeopen = $this->apply_date_offset($data->timeopen);
         $data->timeclose = $this->apply_date_offset($data->timeclose);
 
-        // Insert the dicomviwer record.
         $newitemid = $DB->insert_record('dicomviewer', $data);
         // Immediately after inserting "activity" record, call this.
         $this->apply_activity_instance($newitemid);
@@ -81,7 +80,7 @@ class restore_dicomviewer_activity_structure_step extends restore_activity_struc
      * Add dicomviewer related files
      */
     protected function after_execute() {
-        // Add dicomviewer related files, no need to match by itemname (just internally handled context).
+        // No need to match by itemname (just internally handled context).
         $this->add_related_files('mod_dicomviewer', 'intro', null);
     }
 }
