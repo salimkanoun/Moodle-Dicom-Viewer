@@ -26,7 +26,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'mod_dicomviewer';
-$plugin->release = '1.2.0';
-$plugin->version = 2022080400;
+$plugin->release = '1.2.1';
+$plugin->version = 2022081700;
 $plugin->requires = 2021051700;
 $plugin->maturity = MATURITY_BETA;
