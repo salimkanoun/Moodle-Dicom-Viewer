@@ -10,15 +10,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+    - name: 'Build checkout'
+      uses: actions/checkout@v3
+
     - name: Creation of the dicomviewer folder
       run : mkdir dicomviewer
       working-directory: /tmp
@@ -55,7 +50,7 @@ jobs:
         rm -rf ./.github
         rm -f ./.gitignore
         rm -rf ./dicomviewer/Documentation
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v3
       with:
         name: dicomviewer
         path: ./
