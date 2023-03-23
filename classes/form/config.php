@@ -56,10 +56,8 @@ class config extends moodleform {
 
         $mform->addElement('header', 'headerstone', get_string('titlestone', 'dicomviewer'));
 
-        dicomviewer_addelementclassiconform($mform, 'title_expected', 'stone_expectedorigin', $datajsonstone['StoneWebViewer']
-            ['ExpectedMessageOrigin'], $attributs);
-        dicomviewer_addelementclassiconform($mform, 'title_dicomweb', 'stone_dicomwebroot', $datajsonstone['StoneWebViewer']
-            ['DicomWebRoot'], $attributs);
+        dicomviewer_addelementclassiconform($mform, 'title_expected', 'stone_expectedorigin', $datajsonstone['StoneWebViewer']['ExpectedMessageOrigin'], $attributs);
+        dicomviewer_addelementclassiconform($mform, 'title_dicomweb', 'stone_dicomwebroot', $datajsonstone['StoneWebViewer']['DicomWebRoot'], $attributs);
 
         $mform->addElement('header', 'headerohif', get_string('titleohif', 'dicomviewer'));
 
