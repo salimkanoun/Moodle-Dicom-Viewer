@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 'Build checkout'
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Creation of the dicomviewer folder
       run : mkdir dicomviewer
@@ -21,7 +21,7 @@ jobs:
       run : |
         mv ./* /tmp/dicomviewer
         mv /tmp/dicomviewer ./
-    - name: Doowload Stone Of Orthanc Distribution
+    - name: Download Stone Of Orthanc Distribution
       run: |
         mkdir stone
         cd stone
@@ -50,7 +50,7 @@ jobs:
         rm -rf ./.github
         rm -f ./.gitignore
         rm -rf ./dicomviewer/Documentation
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: dicomviewer
         path: ./
