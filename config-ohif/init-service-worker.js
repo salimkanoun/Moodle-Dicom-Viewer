@@ -5,7 +5,6 @@ let localDataSources = await fetch('/mod/dicomviewer/viewer-ohif/configuration.j
 
 window.config = {
     routerBasename: '/mod/dicomviewer/viewer-ohif',
-    // whiteLabelling: {},
     extensions: [],
     modes: [],
     showStudyList: true,
@@ -15,34 +14,17 @@ window.config = {
         thumbnail: 75,
         prefetch: 10,
     },
-    // filterQueryParam: false,
+    // below flag is for performance reasons, but it might not work for all servers
+    showWarningMessageForCrossOrigin: true,
+    showCPUFallbackMessage: true,
+    showLoadingIndicator: true,
+    filterQueryParam: false,
+    useSharedArrayBuffer: "AUTO",
     dataSources: localDataSources,
     httpErrorHandler: error => {
-        // This is 429 when rejected from the public idc sandbox too often.
         console.warn(error.status);
-
-        // Could use services manager here to bring up a dialog/modal if needed.
-        console.warn('test, navigate to https://ohif.org/');
     },
-    // whiteLabeling: {
-    //   /* Optional: Should return a React component to be rendered in the "Logo" section of the application's Top Navigation bar */
-    //   createLogoComponentFn: function (React) {
-    //     return React.createElement(
-    //       'a',
-    //       {
-    //         target: '_self',
-    //         rel: 'noopener noreferrer',
-    //         className: 'text-purple-600 line-through',
-    //         href: '/',
-    //       },
-    //       React.createElement('img',
-    //         {
-    //           src: './customLogo.svg',
-    //           className: 'w-8 h-8',
-    //         }
-    //       ))
-    //   },
-    // },
+    cornerstoneExtensionConfig: {},
     defaultDataSourceName: 'dicomweb',
     hotkeys: [
         {
