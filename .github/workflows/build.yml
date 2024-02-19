@@ -39,7 +39,7 @@ jobs:
         cd Viewers && yarn config set workspaces-experimental true && yarn install && QUICK_BUILD=true PUBLIC_URL=/mod/dicomviewer/viewer-ohif/ yarn run build
       working-directory: /tmp
     - name: copy Temporary OHIF build to Distribution
-      run : mv /tmp/ohif/Viewers/platform/viewer/dist/* ./dicomviewer/viewer-ohif
+      run : mv /tmp/ohif/Viewers/platform/app/dist/* ./dicomviewer/viewer-ohif
     - name: OHIF Replace configuration and index file
       run : mv ./dicomviewer/config-ohif/* ./dicomviewer/viewer-ohif
     - name: STONE Replace configuration file
