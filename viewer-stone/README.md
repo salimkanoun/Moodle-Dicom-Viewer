@@ -10,7 +10,7 @@ If you downloaded the plugin from the workflows Node.js CI on github (https://gi
 
 - If you are in neither of these cases
 
-1) Download Stone Web Viewer distribution here : https://lsb.orthanc-server.com/stone-webviewer/2.1/wasm-binaries.zip
+1) Download Stone Web Viewer distribution here : https://orthanc.uclouvain.be/downloads/linux-standard-base/stone-web-viewer/2.1/wasm-binaries.zip 
 
 2) Unzip the file
 
